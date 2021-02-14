@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.flex-row{
+    display: flex;
+}
+header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: grey;
+    font-size: 32px;
+}
+header h1{
+    font-weight: bold;
+}
+header a{
+    text-decoration: none;
+}
+header nav{
+    margin: 20px 0;
+}
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    justify-content: end;
+}
+header nav ul li a{
+    font-size: 1.55vw;
+    margin: 0 30px;
+    font-weight: lighter;
+}
+.hero{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    background-image:url("../images/hero.jfif");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center center;
+    align-items: center;
+}
+section{
+    padding: 60px;
+}
+
