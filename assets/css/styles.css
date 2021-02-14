@@ -164,22 +164,20 @@ section{padding: 60px;}
     padding: 10px;
     box-shadow: 10px 10px 10px gray;
 
-    flex-direction: column;
+    display: inline-block;
 }
 .project-bio{
     margin: 20px 0 10px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     color:rgb(44, 44, 44)
 }
 .project:first-child{
-    flex: 1 1 400px;
-    max-width: 50%;
+    flex: 1 1 450px;
 }
 .project:not(:first-child){
     flex: 1 1 300px;
-    max-width: 60%;
 }
 .project img{
     width: 100%;
