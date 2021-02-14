@@ -31,8 +31,7 @@ header nav{
 }
 header nav ul{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-flow: row wrap;
 
     align-items: center;
     justify-content: end;
@@ -130,7 +129,64 @@ section{padding: 60px;}
 .me-text{max-width:750px;}
 
 .work{
+    background-image:url("../images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.work-content{
+    text-align: center;
+    flex-direction: column;
+}
+.work-content h2{
+    color: white;
+    font-size: 35px;
+    padding-top: 30px;
+}
+.projects{
+    width:100%;
 
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.project{
+    background-color:rgb(160, 160, 160);
+
+    width: 25%;
+    margin: 10px;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 10px 10px 10px gray;
+
+    flex-direction: column;
+}
+.project-bio{
+    margin: 20px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
+
+    color:rgb(44, 44, 44)
+}
+.project:first-child{
+    flex: 1 1 400px;
+    max-width: 50%;
+}
+.project:not(:first-child){
+    flex: 1 1 300px;
+    max-width: 60%;
+}
+.project img{
+    width: 100%;
+    filter: grayscale(100%);
+}
+.project img:hover{
+    filter: grayscale(0%);
+    transition-duration: 1s;
+}
+.project-name{
+    font-size: 1.5em;
 }
 
 .contact{
