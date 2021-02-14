@@ -113,6 +113,10 @@ section{padding: 60px;}
     background-color: rgb(160, 160, 160);
     margin: auto;
 }
+.bio h2{
+    font-size: 30px;
+    padding-top: 10px;
+}
 .me-content{
     display: flex;
     flex-direction: column;
@@ -141,7 +145,7 @@ section{padding: 60px;}
 }
 .work-content h2{
     color: white;
-    font-size: 35px;
+    font-size: 30px;
     padding-top: 30px;
 }
 .projects{
@@ -191,5 +195,28 @@ section{padding: 60px;}
 
 .contact{
     background-color: rgb(160,160,160);
+    height: 30vh;
+    padding: 60px;
+}
+.contact h2{
+    font-size: 30px;
+}
+.contact-content{
+    border: 3px solid black;
+    margin: 0 auto;
+    height: 168px;
+    width: 670px;
+    padding-top:30px;
+
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.contact-info{
+    padding: 35px;
+    justify-content: space-evenly;
+}
+.contact-info p{
+    width: 350px;
 }
 
