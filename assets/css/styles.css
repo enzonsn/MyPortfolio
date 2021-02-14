@@ -169,7 +169,7 @@ section{padding: 60px;}
 .project-bio{
     margin: 20px 0 10px 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     color:rgb(44, 44, 44)
 }
