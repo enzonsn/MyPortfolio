@@ -3,46 +3,67 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .flex-row{
     display: flex;
 }
+
 header{
     padding: 20px;
+
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    background-color: grey;
-    font-size: 32px;
+    justify-content: space-between;
+
+    background-image:url("../images/hero.jpg");
+    background-size: cover;
+    background-position: 100%;
+    background-attachment: fixed;
+
+    z-index: 999;
 }
 header h1{
     font-weight: bold;
+    color: white;
 }
 header a{
     text-decoration: none;
+    color: white;
 }
 header nav{
     margin: 20px 0;
+    display: flex;
+    align-items: center;
 }
 header nav ul{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    list-style-type: none;
+
     align-items: center;
     justify-content: end;
+
+    list-style: none;
 }
 header nav ul li a{
-    font-size: 1.55vw;
     margin: 0 30px;
+    font-size: 30px;
     font-weight: lighter;
 }
+header nav li a:hover{
+    text-decoration: underline;
+}
+
+body{
+    margin:0 auto;
+}
+
 .hero{
-    position: relative;
-    width: 100vw;
     height: 100vh;
 
-    background-image:url("../images/hero.jfif");
+    background-image:url("../images/hero.jpg");
     background-size: cover;
-    background-position: center center;
+    background-position: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
 
@@ -50,7 +71,11 @@ header nav ul li a{
     flex-direction: column;
     justify-content: center center;
     align-items: center;
+    text-align: center;
+    color: white;
 }
+
+
 section{
     padding: 60px;
 }
