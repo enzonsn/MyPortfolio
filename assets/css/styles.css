@@ -193,28 +193,21 @@ section{padding: 60px;}
 
 .contact{
     background-color: rgb(160,160,160);
-    height: 30vh;
+    height: 45vh;
     padding: 60px;
 }
 .contact h2{
     font-size: 30px;
 }
-.contact-content{
+.contact-content {
     border: 3px solid black;
     margin: 0 auto;
-    height: 168px;
-    width: 670px;
-    padding-top:30px;
-
+    padding-top: 3vh;
     flex-direction: column;
     text-align: center;
     align-items: center;
 }
-.contact-info{
-    padding: 35px;
-    justify-content: space-evenly;
-}
-.contact-info p{
-    width: 350px;
+.contact-info {
+    padding: 5vh;
 }
 
