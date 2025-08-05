@@ -64,8 +64,6 @@ body {
     margin: 0;
     gap: 1rem;
     background: var(--bg);
-    
-    @import src="assets/css/form_Styles.css";
 }
 
 .hero{
