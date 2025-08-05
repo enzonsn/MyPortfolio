@@ -1,12 +1,118 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\assets\\css\\form_Styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\css\\form_Styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\assets\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\form.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:form.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\assets\\js\\button_script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\js\\button_script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\index.html",
+              "RelativeDocumentMoniker": "index.html",
+              "ToolTip": "C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\index.html",
+              "RelativeToolTip": "index.html",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAAGcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-08-02T03:32:38.32Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "styles.css",
+              "DocumentMoniker": "C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\assets\\css\\styles.css",
+              "RelativeDocumentMoniker": "assets\\css\\styles.css",
+              "ToolTip": "C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\assets\\css\\styles.css",
+              "RelativeToolTip": "assets\\css\\styles.css",
+              "ViewState": "AgIAANIAAAAAAAAAAAAAANwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-02T04:04:47.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e9d26e9f-2060-4aa2-bec3-2a9e07c66900}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "form.html",
+              "DocumentMoniker": "C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\form.html",
+              "RelativeDocumentMoniker": "form.html",
+              "ToolTip": "C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\form.html",
+              "RelativeToolTip": "form.html",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-08-05T17:02:14.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "form_Styles.css",
+              "DocumentMoniker": "C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\assets\\css\\form_Styles.css",
+              "RelativeDocumentMoniker": "assets\\css\\form_Styles.css",
+              "ToolTip": "C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\assets\\css\\form_Styles.css",
+              "RelativeToolTip": "assets\\css\\form_Styles.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-05T17:03:32.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "button_script.js",
+              "DocumentMoniker": "C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\assets\\js\\button_script.js",
+              "RelativeDocumentMoniker": "assets\\js\\button_script.js",
+              "ToolTip": "C:\\Users\\enzon\\source\\repos\\enzonsn\\MyPortfolio\\assets\\js\\button_script.js",
+              "RelativeToolTip": "assets\\js\\button_script.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-08-05T18:57:37.583Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
