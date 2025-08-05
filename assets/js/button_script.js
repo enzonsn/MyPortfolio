@@ -8,10 +8,10 @@ window.addEventListener('DOMContentLoaded', () => {
     document.documentElement.style.setProperty('--xp', xp);
     document.documentElement.style.setProperty('--y', y);
     document.documentElement.style.setProperty('--yp', yp);
+
+    const soloButton = document.getElementById('solo-button');
+    soloButton.addEventListener('click', (event) => {
+        window.location.href = '../../form.html';
+    });
 };
 document.body.addEventListener('pointermove', syncPointer);
-
-const soloButton = document.getElementById('solo-button');
-soloButton.addEventListener('click', (event) => {
-    window.location.href = '../../form.html';
-});
