@@ -10,5 +10,7 @@ const syncPointer = ({ x: pointerX, y: pointerY }) => {
 }
 document.body.addEventListener('pointermove', syncPointer);
 
-const soloButton - document.getElementById('solo-button');
-soloButton.addEventListener('click', (event) => { window.location.href = '../../form.html'; };
+const soloButton = document.getElementById('solo-button');
+soloButton.addEventListener('click', (event) => {
+    window.location.href = '../../form.html';
+});
