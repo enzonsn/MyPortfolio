@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #e77200;
+    --text-color: #e77200;
+    --accent-color: #d4d4d4;
+    --bg: white;
+}
+
+.ppm-form {
+    padding-block: 10%;
+    display: flex;
+    place-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    background: var(--bg);
+}
+
+input,
+button,
+select,
+textarea {
+    font: inherit;
+    font-weight: bold;
+    border-radius: 16px;
+    padding: 1ex 2ex;
+    width: 100%
+    
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+}
+
+form-group {
+}
+
+label {
+    color: #1a1a1a;
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+input{ padding-block: 5%;}
