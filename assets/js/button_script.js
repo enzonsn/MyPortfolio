@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const soloButton = document.getElementById('solo-button');
     if (soloButton) {
         soloButton.addEventListener('click', () => {
-            window.location.href = '../../form.html';
+            window.location.href = '/form.html';
         });
     } else {
         console.error('solo-button not found');
