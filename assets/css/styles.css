@@ -222,6 +222,8 @@ body {
     background: var(--bg);
 }
 .selector_button {
+    font-size: 4vw;
+    flex-grow: 1;
     margin:2.5%;
     position: relative;
     border-radius: 1rem;
@@ -251,8 +253,8 @@ body {
         background-clip: text;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
-        height: 100%;
-        width: 100%;
+        height: 20vw;
+        width: 30vw;
         z-index: 2;
         inset: 0;
     }
