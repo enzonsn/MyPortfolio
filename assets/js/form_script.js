@@ -20,6 +20,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const company = username + domain;
 
+        console.log(company);
+
         companyField.value = company;
         console.log('Extracted company:', company);
     });
