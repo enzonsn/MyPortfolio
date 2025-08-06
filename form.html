@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="Content-type" content="text/html">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./assets/css/form_Styles.css">
-        <title>Enzo Sperduti's Portfolio</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/form_Styles.css">
+    <script defer src="./assets/js/form_script.js"></script>
+    <title>Enzo Sperduti's Portfolio</title>
+</head>
+<body>
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DfI00000Rhl49" method="POST">
 
-    <body id="ppm-form" class="ppm-form">
-        <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DfI00000Rhl49" method="POST">
+        <input type=hidden name="oid" value="00DfI00000Rhl49">
+        <input type=hidden name="retURL" value="http://smlre.com">
+        <input type=hidden name="debugEmail" value="enzospuk@gmail.com">
 
-            <input type=hidden name="oid" value="00DfI00000Rhl49">
-            <input type=hidden name="retURL" value="http://smlre.com">                            
-            <input type=hidden name="debugEmail" value="enzospuk@gmail.com">
 
-            <label for="first_name">First Name</label><input id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+        <div id="first_name" class="form_div">
+            <input id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+            <label for="first_name">First Name</label>
+        </div>
+        <div id="last_name" class="form_div">
+            <input id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+            <label for="last_name">Last Name</label>
+        </div>
+        <div id="email" class="form_div">
+            <input id="email" maxlength="80" name="email" size="20" type="text" />
+            <label for="email">Email</label>
+        </div>
+        <div id="city" class="form_div">
+            <input id="city" maxlength="40" name="city" size="20" type="text" />
+            <label for="city">City</label>
 
-            <label for="last_name">Last Name</label><input id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
-
-            <label for="email">Email</label><input id="email" maxlength="80" name="email" size="20" type="text" /><br>
-
-            <label for="company">Company</label><input id="company" maxlength="40" name="company" size="20" type="text" /><br>
-
-            <label for="city">City</label><input id="city" maxlength="40" name="city" size="20" type="text" /><br>
-
-            <label for="country_code">Country</label><select id="country_code" name="country_code">
+        </div>
+        <div id="country" class="form_div">
+            <select id="country_code" name="country_code">
                 <option value="">--None--</option>
                 <option value="AF">Afghanistan</option>
                 <option value="AX">Aland Islands</option>
@@ -262,9 +271,12 @@
                 <option value="YE">Yemen</option>
                 <option value="ZM">Zambia</option>
                 <option value="ZW">Zimbabwe</option>
-            </select><br>
+            </select>
+            <label for="country_code">Country</label>
+        </div>
 
-            <label for="state_code">State/Province</label><select id="state_code" name="state_code">
+        <div id="state" class="form_div">
+            <select id="state_code" name="state_code">
                 <option value="">--None--</option>
                 <option value="AC">Acre</option>
                 <option value="AG">Agrigento</option>
@@ -650,15 +662,27 @@
                 <option value="53">Yunnan</option>
                 <option value="ZA">Zacatecas</option>
                 <option value="33">Zhejiang</option>
-            </select><br>
+            </select>
+            <label for="state_code">State/Province</label>
+        </div>
 
-            <label for="phone">Phone</label><input id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
-
-            <label for="street">Street</label><textarea name="street"></textarea><br>
-
-            <label for="zip">Zip</label><input id="zip" maxlength="20" name="zip" size="20" type="text" /><br>
-
+        <div id="phone" class="form_div">
+            <input id="phone" maxlength="40" name="phone" size="20" type="text" />
+            <label for="phone">Phone</label>
+        </div>
+        <div id="address" class="form_div">
+            <textarea name="street"></textarea>
+            <label for="street">Street</label>
+        </div>
+        <div id="zip" class="form_div">
+            <input id="zip" maxlength="20" name="zip" size="20" type="text" />
+            <label for="zip">Zip/Postal Code</label>
+        </div>
+        <div id="submit" class="form_div">
             <input type="submit" name="submit">
-            </form>
-</body>
-    </html>
+        </div>
+        <input id="company_name" name="company" type="hidden" value= />
+    </form>
+    </body>
+
+</html>

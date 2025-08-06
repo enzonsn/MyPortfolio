@@ -217,6 +217,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     margin: 0;
+    font-weight: bold;
     padding: 20px;
     background: var(--bg);
 }
@@ -226,7 +227,6 @@ body {
     border-radius: 1rem;
     padding: 1rem 1.5rem;
     text-transform: uppercase;
-    font-weight: bold;
     letter-spacing: 0.1ch;
     border: 4px solid transparent;
     box-shadow: 0 1px hsl(0 0% 100% / 0.15) inset;
@@ -264,16 +264,6 @@ body {
         background: var(--glow);
         border-radius: 1rem;
     }
-
-
-
-
-
-
-
-
-
-
 
 footer{
     background-color: rgb(160, 160, 160);

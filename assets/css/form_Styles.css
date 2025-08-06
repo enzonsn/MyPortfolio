@@ -2,50 +2,101 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
 }
 
 :root {
-    --primary-color: #e77200;
-    --text-color: #e77200;
-    --accent-color: #d4d4d4;
-    --bg: white;
+    --text-color: #eef0ff;
+    --bg: #222324;
 }
 
-.ppm-form {
+body {
+    background: var(--bg);
+}
+
+
+
+form {
+    display: flex;
+    min-height: 100vh;
+    flex-wrap: wrap;
     padding-block: 10%;
     display: flex;
     place-items: center;
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 auto;
+    background: #111112;
+    margin: 0;
+    padding: 20px;
+}
+
+.form_div {
+    position: relative;
+    margin: 20px 0;
     background: var(--bg);
 }
 
-input,
-button,
-select,
-textarea {
-    font: inherit;
-    font-weight: bold;
-    border-radius: 16px;
-    padding: 1ex 2ex;
-    width: 100%
-    
+    .form_div label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #fff;
+        padding: 0 5px;
+        pointer-events: none;
+        transition: .5s;
+    }
+.form_div input,
+.form_div button,
+.form_div select,
+.form_div textarea {
+    width: 33vw;
+    height: 5vh;
+    font-size: .85rem;
+    color: #d1d1d1;
+    padding: 0 10px;
+    background: transparent;
+    border: 1.2px solid #fff;
+    outline: none;
+    border-radius: 5px;
 }
 
-form {
-    display: grid;
-    gap: 1rem;
+.form_div input:focus ~ label,
+.form_div input:valid ~ label {
+    top: 0;
+    font-size: 12px;
+    background: var(--bg);
 }
 
-form-group {
+.form_div select:focus ~ label,
+.form_div select.valid ~ label {
+    top: 0;
+    font-size: 12px;
+    background: var(--bg);
+}
+.form_div textarea:focus ~ label,
+.form_div textarea:valid ~ label {
+    top: 0;
+    font-size: 12px;
+    background: var(--bg);
+}
+.form_div select:focus ~ label,
+.form_div select:valid ~ label {
+    top: 0;
+    font-size: 12px;
+    background: var(--bg);
+}
+.form_div textarea {
+    resize: none;
 }
 
-label {
-    color: #1a1a1a;
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+option {
+    background: var(--bg);
+    color: #fff;
 }
-input{ padding-block: 5%;}
