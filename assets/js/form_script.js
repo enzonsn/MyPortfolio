@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     emailField.addEventListener('change', function () {
         const email = this.value.trim();
+        console.log(email);
 
         const atIndex = email.indexOf('@');
         if (atIndex === -1) {
@@ -19,8 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
         domain = domain.replace(/\.(com|net|org|gov|edu|co\.uk|io|dev|me|info|biz|us|uk)$/, '');
 
         const company = username + domain;
-
-        console.log(company);
 
         companyField.value = company;
         console.log('Extracted company:', company);
