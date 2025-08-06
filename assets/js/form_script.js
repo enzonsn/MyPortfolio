@@ -4,11 +4,23 @@ window.addEventListener('DOMContentLoaded', () => {
     const companyField = document.getElementById('company_name');
 
     emailField.addEventListener('change', function () {
-        emailInput = this.value;
-        emailToCompany();
-    });
+        const email = this.value.trim();
 
-    function emailToCompany() {
-        companyField.value = emailInput;
-    }
+        const atIndex = email.indexOf('@');
+        if (atIndex === -1) {
+            companyField.value = '';
+            console.warn('Invalid email — missing @');
+            return;
+        }
+
+        const username = email.slice(0, atIndex);
+        let domain = email.slice(atIndex + 1);
+
+        domain = domain.replace(/\.(com|net|org|gov|edu|co\.uk|io|dev|me|info|biz|us|uk)$/, '');
+
+        const company = username + domain;
+
+        companyField.value = company;
+        console.log('Extracted company:', company);
+    });
 });
