@@ -71,8 +71,10 @@ tailwind.config = {
   .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
   .scrollbar-thin::-webkit-scrollbar-thumb { background: #B8A6E8; border-radius: 3px; }
   .scrollbar-thin::-webkit-scrollbar-thumb:hover { background: #7A5BC9; }
+  .cart-full-pulse { animation: fullPulse 1.2s ease-in-out 2; }
+  @keyframes fullPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
   @media (prefers-reduced-motion: reduce) {
-    .reveal, .pulse-dot { animation: none !important; opacity: 1 !important; transform: none !important; }
+    .reveal, .pulse-dot, .cart-full-pulse { animation: none !important; opacity: 1 !important; transform: none !important; }
   }
 </style>
 </head>
@@ -194,16 +196,23 @@ tailwind.config = {
           <div id="drink-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-h-[480px] overflow-y-auto pr-1 scrollbar-thin"></div>
 
           <!-- Add to cart -->
-          <div id="add-to-cart-bar" class="hidden mt-6 p-5 bg-plum text-cream rounded-2xl flex items-center justify-between gap-4 flex-wrap">
-            <div class="flex-1 min-w-[200px]">
-              <div class="font-mono text-[10px] uppercase tracking-[0.18em] opacity-60 mb-1">Building</div>
-              <div id="build-summary" class="font-display font-bold text-lg">—</div>
+          <div id="add-to-cart-bar" class="hidden mt-6 p-5 bg-plum text-cream rounded-2xl">
+            <div class="flex items-center justify-between gap-4 flex-wrap">
+              <div class="flex-1 min-w-[200px]">
+                <div class="font-mono text-[10px] uppercase tracking-[0.18em] opacity-60 mb-1">Building</div>
+                <div id="build-summary" class="font-display font-bold text-lg">—</div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div id="build-price" class="font-display font-extrabold text-2xl">$0.00</div>
+                <button id="add-to-cart-btn" class="cta-primary bg-strawberry text-plum px-6 py-3 rounded-full font-bold inline-flex items-center gap-2">
+                  Add to cart <i class="ph ph-plus-bold"></i>
+                </button>
+              </div>
             </div>
-            <div class="flex items-center gap-3">
-              <div id="build-price" class="font-display font-extrabold text-2xl">$0.00</div>
-              <button id="add-to-cart-btn" class="cta-primary bg-strawberry text-plum px-6 py-3 rounded-full font-bold inline-flex items-center gap-2">
-                Add to cart <i class="ph ph-plus-bold"></i>
-              </button>
+            <!-- Cart-limit hint (shown only when full) -->
+            <div id="cart-full-hint" class="hidden mt-3 pt-3 border-t border-cream/15 flex items-center gap-2 text-sm">
+              <i class="ph-fill ph-warning-circle text-gold text-lg"></i>
+              <span class="text-cream/80">Cart is full (10 items). Remove something below to add more.</span>
             </div>
           </div>
         </section>
@@ -247,7 +256,13 @@ tailwind.config = {
                 <i class="ph-fill ph-shopping-bag text-strawberry"></i>
                 Your cart
               </h2>
-              <span id="cart-count" class="font-mono text-xs bg-strawberry text-plum rounded-full w-7 h-7 flex items-center justify-center font-bold">0</span>
+              <span id="cart-count" class="font-mono text-xs bg-strawberry text-plum rounded-full w-7 h-7 flex items-center justify-center font-bold">0/10</span>
+            </div>
+
+            <!-- Cart-limit warning (shown only when full) -->
+            <div id="cart-full-banner" class="hidden bg-strawberry/15 border-b border-strawberry/40 px-6 py-3 flex items-center gap-2 text-sm">
+              <i class="ph-fill ph-warning-circle text-strawberry text-lg"></i>
+              <span class="text-cream font-medium">Cart is full · 10 item max</span>
             </div>
 
             <div id="cart-empty" class="p-8 text-center">
@@ -309,10 +324,14 @@ tailwind.config = {
   <div id="mobile-cart-overlay" class="hidden fixed inset-0 bg-plum/60 z-50 backdrop-blur-sm"></div>
   <div id="mobile-cart-sheet" class="hidden fixed bottom-0 inset-x-0 z-50 bg-plum text-cream rounded-t-3xl max-h-[90vh] flex flex-col">
     <div class="p-5 border-b border-cream/10 flex items-center justify-between">
-      <h2 class="font-display font-extrabold text-xl">Your cart</h2>
+      <h2 class="font-display font-extrabold text-xl">Your cart <span id="mobile-cart-count" class="font-mono text-xs bg-strawberry text-plum rounded-full px-2 py-0.5 ml-1 align-middle">0/10</span></h2>
       <button id="close-cart-mobile" class="w-9 h-9 rounded-full bg-cream/10 flex items-center justify-center hover:bg-cream/20">
         <i class="ph ph-x text-lg"></i>
       </button>
+    </div>
+    <div id="mobile-cart-full-banner" class="hidden bg-strawberry/15 border-b border-strawberry/40 px-5 py-2.5 flex items-center gap-2 text-sm">
+      <i class="ph-fill ph-warning-circle text-strawberry text-lg"></i>
+      <span class="text-cream font-medium">Cart is full · 10 item max</span>
     </div>
     <div id="mobile-cart-items" class="flex-1 overflow-y-auto p-5 scrollbar-thin"></div>
     <div id="mobile-cart-footer" class="hidden p-5 border-t border-cream/10 space-y-3">
@@ -333,6 +352,10 @@ tailwind.config = {
   </div>
 
 <script>
+// ============ CART LIMIT ============
+const CART_LIMIT = 10;
+function isCartFull() { return state && state.cart.length >= CART_LIMIT; }
+
 // ============ MENU DATA ============
 const HOURS = {
   1: { open: 7,  close: 19 }, // Mon
@@ -510,7 +533,6 @@ function getOpenState() {
   const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
   if (todayHours === null) {
-    // Sunday closed
     return { isOpen: false, message: 'Opens Monday at 7:00 AM' };
   }
   if (h >= todayHours.open && h < todayHours.close) {
@@ -519,7 +541,6 @@ function getOpenState() {
   if (h < todayHours.open) {
     return { isOpen: false, message: `Opens today at ${formatTime(todayHours.open)}` };
   }
-  // After close — find next open day
   for (let i = 1; i <= 7; i++) {
     const next = (day + i) % 7;
     if (HOURS[next] !== null) {
@@ -548,7 +569,6 @@ function updateStatusBanner() {
   document.getElementById('status-open').classList.toggle('hidden', !isOpen);
   document.getElementById('status-closed').classList.toggle('hidden', isOpen);
   if (!isOpen && message) document.getElementById('closed-message').textContent = message;
-  // Disable submit buttons
   ['submit-btn','mobile-submit-btn'].forEach(id => {
     const b = document.getElementById(id);
     if (b) {
@@ -600,7 +620,6 @@ function selectCategory(id) {
 
   const c = MENU[id];
 
-  // 3-in-1: fixed price, no size
   document.getElementById('size-selector').classList.toggle('hidden', !c.sizes && !c.isCombo);
   document.getElementById('energy-selector').classList.toggle('hidden', id !== 'loaded-tea');
   document.getElementById('addons-section').classList.toggle('hidden', !c.addons);
@@ -614,10 +633,11 @@ function selectCategory(id) {
   else renderDrinks(c);
 
   updateBuildSummary();
+  refreshCartLimitUI();
 }
 
 function renderSizeOptions(c) {
-  document.getElementById('size-label').textContent = id === 'protein-coffee' ? 'Choose size & milk' : 'Choose size';
+  document.getElementById('size-label').textContent = c.milkOptions ? 'Choose size & milk' : 'Choose size';
   const wrap = document.getElementById('size-options');
   wrap.innerHTML = c.sizes.map(s => `
     <button data-size="${s.id}" class="size-tile text-left p-3.5 rounded-xl border-2 border-plum/15 bg-cream hover:border-plum">
@@ -702,20 +722,19 @@ function labelFor(catId) {
 }
 
 function startCombo(comboId) {
+  if (isCartFull()) {
+    showToast(`Cart is full (${CART_LIMIT} items max). Remove something to add a combo.`, true);
+    return;
+  }
   const co = MENU['combos'].combos.find(x => x.id === comboId);
-  // Add combo metadata to a temporary state; user adds first drink, then prompt for second
   state.combo = co;
   state.comboStep = 1;
   state.comboItems = [];
-  // Switch to the first drink's category
   const firstCat = co.a === 'any-drink' ? 'loaded-tea' : co.a;
   selectCategory(firstCat);
-  // Override title
   document.getElementById('step2-title').textContent = `Combo · Step 1 of 2 — pick drink 1`;
-  // Add a "Save combo" button when 2 drinks added
   const bar = document.getElementById('add-to-cart-bar');
   bar.classList.remove('hidden');
-  // Show combo banner above the bar
   if (!document.getElementById('combo-banner')) {
     const banner = document.createElement('div');
     banner.id = 'combo-banner';
@@ -737,12 +756,14 @@ function startCombo(comboId) {
 }
 
 function addCurrentToCart() {
-  const c = MENU[state.currentCategory];
-  let item, price;
-  if (c.isCombo || state.combo) {
-    // shouldn't reach here in combo flow (combos add via the comboItems path)
+  if (isCartFull()) {
+    showToast(`Cart is full (${CART_LIMIT} items max)`, true);
+    document.getElementById('cart-full-banner').classList.remove('hidden');
     return;
   }
+  const c = MENU[state.currentCategory];
+  let item, price;
+  if (c.isCombo || state.combo) return;
   const size = c.sizes ? c.sizes.find(s => s.id === state.currentSize) : null;
   const milk = c.milkOptions ? c.milkOptions.find(m => m.id === state.currentMilk) : null;
   const addons = c.addons ? c.addons.filter(a => state.currentAddons.has(a.id)) : [];
@@ -762,13 +783,11 @@ function addCurrentToCart() {
     state.comboItems.push(item);
     document.getElementById('combo-banner').querySelector('span').innerHTML = `<strong>${state.combo.name}</strong> · ${state.comboItems.length} of 2 drinks added`;
     if (state.comboItems.length === 1) {
-      // Move to slot 2
-      const slot2Cat = state.combo.a; // for simplicity, slot 2 same category
+      const slot2Cat = state.combo.a;
       selectCategory(slot2Cat === 'any-drink' ? 'loaded-tea' : slot2Cat);
       document.getElementById('step2-title').textContent = `Combo · Step 2 of 2 — pick drink 2 (10% off)`;
       return;
     }
-    // Both added: finalize combo
     const [a, b] = state.comboItems;
     const comboItem = {
       id: Date.now() + '-combo',
@@ -790,7 +809,7 @@ function addCurrentToCart() {
   }
 
   state.cart.push(item);
-  showToast(`${item.flavor} added · $${price.toFixed(2)}`);
+  showToast(`${item.flavor} added · $${price.toFixed(2)} · ${state.cart.length}/${CART_LIMIT}`);
   renderCart();
   resetBuilder();
 }
@@ -826,6 +845,46 @@ function updateBuildSummary() {
   document.getElementById('build-price').textContent = `$${total.toFixed(2)}`;
 }
 
+// ============ CART LIMIT UI ============
+function refreshCartLimitUI() {
+  const full = isCartFull();
+  // Count badges: show "n/10"
+  const countTxt = `${state.cart.length}/${CART_LIMIT}`;
+  document.getElementById('cart-count').textContent = countTxt;
+  document.getElementById('cart-count-mobile').textContent = String(state.cart.length);
+  const m = document.getElementById('mobile-cart-count');
+  if (m) m.textContent = countTxt;
+
+  // Highlight count badge when full
+  const badges = ['cart-count','mobile-cart-count'];
+  badges.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.toggle('bg-strawberry', !full);
+    el.classList.toggle('text-plum', !full);
+    el.classList.toggle('bg-gold', full);
+    el.classList.toggle('text-plum', full);
+  });
+
+  // Inline hint inside the add-to-cart bar (only relevant while building)
+  document.getElementById('cart-full-hint').classList.toggle('hidden', !full);
+
+  // Full-state banner on the cart itself
+  document.getElementById('cart-full-banner').classList.toggle('hidden', !full);
+  document.getElementById('mobile-cart-full-banner').classList.toggle('hidden', !full);
+
+  // Add-to-cart button disabled when full
+  const addBtn = document.getElementById('add-to-cart-btn');
+  if (addBtn) addBtn.disabled = full;
+
+  // Pulse the count badge briefly when full hits
+  if (full) {
+    const el = document.getElementById('cart-count');
+    el.classList.add('cart-full-pulse');
+    setTimeout(() => el.classList.remove('cart-full-pulse'), 2400);
+  }
+}
+
 // ============ CART ============
 function renderCart() {
   const wrap = document.getElementById('cart-items');
@@ -835,14 +894,13 @@ function renderCart() {
   const mobFooter = document.getElementById('mobile-cart-footer');
 
   const count = state.cart.length;
-  document.getElementById('cart-count').textContent = count;
-  document.getElementById('cart-count-mobile').textContent = count;
 
   if (count === 0) {
     empty.classList.remove('hidden');
     wrap.classList.add('hidden');
     footer.classList.add('hidden');
     mobFooter.classList.add('hidden');
+    refreshCartLimitUI();
     return;
   }
   empty.classList.add('hidden');
@@ -881,6 +939,8 @@ function renderCart() {
     state.cart = state.cart.filter(i => i.id !== b.dataset.remove);
     renderCart();
   }));
+
+  refreshCartLimitUI();
 }
 
 // ============ SUBMIT → INSTAGRAM DM ============
@@ -949,9 +1009,7 @@ function populatePickupTimes() {
   const day = now.getDay();
   const h = now.getHours() + now.getMinutes()/60;
   const todayHours = HOURS[day];
-  // If closed today, suggest tomorrow's first open
   let startH = (todayHours && h < todayHours.close) ? Math.max(todayHours.open, Math.ceil(h/0.25)*0.25 + 0.25) : (todayHours ? todayHours.open + 24 : null);
-  // Build next 24h of 15-min slots, only those within open hours
   const slots = [];
   for (let i = 0; i < 96; i++) {
     const t = new Date(now.getTime() + i * 15 * 60000);
@@ -994,7 +1052,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('close-cart-mobile').addEventListener('click', closeMobileCart);
   document.getElementById('mobile-cart-overlay').addEventListener('click', closeMobileCart);
 
-  // Refresh status + time picker every minute
   setInterval(() => { updateStatusBanner(); populatePickupTimes(); }, 60000);
 });
 </script>
