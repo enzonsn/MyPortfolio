@@ -5,8 +5,8 @@ html
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-Blended & Blessed — Smoothie & Tea Bar
-<meta name="description" content="Loaded teas, protein smoothies, and 3-in-1 specialties, handcrafted daily at Blended & Blessed. Order pickup on Instagram DM." />
+Blended & Blessed — Smoothie & Tea Bar · Montgomery, TX
+<meta name="description" content="Loaded teas, protein smoothies, 3-in-1 specialties, and protein coffee — handcrafted daily at Blended & Blessed in Montgomery, TX. Order pickup on Instagram DM." />
 <meta property="og:title" content="Blended & Blessed — Smoothie & Tea Bar" />
 <meta property="og:description" content="Loaded teas. Protein smoothies. Blessed vibes. Order pickup today." />
 <meta property="og:type" content="website" />
@@ -81,17 +81,16 @@ tailwind.config = {
   <nav class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-cream/80 border-b border-plum/5">
     <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 h-16 flex items-center justify-between gap-3">
       <a href="#top" class="flex items-center gap-2.5 shrink-0">
-        <!-- LOGO PLACEHOLDER: swap this <span> for the real <img src="logo.svg"> -->
         <span class="w-9 h-9 rounded-full bg-lavender flex items-center justify-center font-display font-extrabold text-plum text-lg">B</span>
         <span class="font-display font-bold text-base sm:text-lg tracking-tight whitespace-nowrap">Blended &amp; Blessed</span>
       </a>
       <div class="flex items-center gap-1 sm:gap-3 md:gap-5">
         <a href="#menu" class="hidden md:inline text-sm font-medium hover:text-strawberry transition-colors px-2 py-1">Menu</a>
-        <a href="#order" class="hidden md:inline text-sm font-medium hover:text-strawberry transition-colors px-2 py-1">Order</a>
+        <a href="order.html" class="hidden md:inline text-sm font-medium hover:text-strawberry transition-colors px-2 py-1">Order</a>
         <a href="https://www.instagram.com/blendedandblessedproteinbar/" target="_blank" rel="noopener" aria-label="Follow on Instagram" class="text-plum hover:text-strawberry transition-colors p-2">
           <i class="ph ph-instagram-logo text-2xl"></i>
         </a>
-        <a href="#order" class="cta-primary bg-plum text-cream px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-sm font-semibold whitespace-nowrap">Order Now</a>
+        <a href="order.html" class="cta-primary bg-plum text-cream px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-sm font-semibold whitespace-nowrap">Order Now</a>
       </div>
     </div>
   </nav>
@@ -120,7 +119,7 @@ tailwind.config = {
           </p>
 
           <div class="flex flex-wrap items-center gap-3">
-            <a href="#order" class="cta-primary inline-flex items-center gap-2 bg-plum text-cream px-7 py-4 rounded-full font-semibold text-base">
+            <a href="order.html" class="cta-primary inline-flex items-center gap-2 bg-plum text-cream px-7 py-4 rounded-full font-semibold text-base">
               Order Now <i class="ph ph-arrow-right text-lg"></i>
             </a>
             <a href="https://www.instagram.com/blendedandblessedproteinbar/" target="_blank" rel="noopener" class="cta-primary inline-flex items-center gap-2 bg-transparent text-plum border-2 border-plum px-7 py-4 rounded-full font-semibold text-base hover:bg-plum hover:text-cream transition-colors">
@@ -129,20 +128,20 @@ tailwind.config = {
           </div>
         </div>
 
-        <!-- LOGO RECREATION (SVG) — swap for <img src="logo.svg" alt="Blended & Blessed" class="w-full h-auto"> -->
+        <!-- LOGO RECREATION (SVG) — swap for <img src="logo.svg" alt="Blended & Blessed" class="w-full h-auto"> when you have the real file -->
         <div class="lg:col-span-5 relative">
           <div class="relative max-w-[460px] mx-auto aspect-[2/1]">
             <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" role="img" aria-label="Blended & Blessed logo">
               <rect width="400" height="200" fill="#E8DEF6"/>
-              <circle cx="40" cy="35" r="5" fill="#B8A6E8" opacity="0.7"/>
-              <circle cx="360" cy="30" r="4" fill="#B8A6E8" opacity="0.6"/>
-              <circle cx="55" cy="170" r="3" fill="#B8A6E8" opacity="0.5"/>
-              <circle cx="370" cy="165" r="5" fill="#B8A6E8" opacity="0.7"/>
-              <circle cx="200" cy="15" r="3" fill="#B8A6E8" opacity="0.5"/>
-              <circle cx="15" cy="100" r="3" fill="#B8A6E8" opacity="0.5"/>
-              <circle cx="385" cy="100" r="4" fill="#B8A6E8" opacity="0.6"/>
+              <circle cx="40" cy="35" r="5" fill="#B8A6E8" opacity="0.7" aria-hidden="true"/>
+              <circle cx="360" cy="30" r="4" fill="#B8A6E8" opacity="0.6" aria-hidden="true"/>
+              <circle cx="55" cy="170" r="3" fill="#B8A6E8" opacity="0.5" aria-hidden="true"/>
+              <circle cx="370" cy="165" r="5" fill="#B8A6E8" opacity="0.7" aria-hidden="true"/>
+              <circle cx="200" cy="15" r="3" fill="#B8A6E8" opacity="0.5" aria-hidden="true"/>
+              <circle cx="15" cy="100" r="3" fill="#B8A6E8" opacity="0.5" aria-hidden="true"/>
+              <circle cx="385" cy="100" r="4" fill="#B8A6E8" opacity="0.6" aria-hidden="true"/>
 
-              <g transform="translate(55, 25)">
+              <g transform="translate(55, 25)" aria-hidden="true">
                 <path d="M10 25 L100 25 L95 135 Q95 145 85 145 L25 145 Q15 145 15 135 Z" fill="#FFE4ED" stroke="#2A1245" stroke-width="3.5" stroke-linejoin="round"/>
                 <path d="M15 55 L95 55 L90 135 Q90 143 82 143 L28 143 Q20 143 20 135 Z" fill="#FF4E78"/>
                 <path d="M18 55 Q12 35 32 28 Q38 12 55 22 Q72 8 82 28 Q98 35 92 55 Z" fill="#FFE4ED" stroke="#2A1245" stroke-width="3" stroke-linejoin="round"/>
@@ -150,18 +149,18 @@ tailwind.config = {
                 <path d="M60 25 Q65 18 70 25" fill="none" stroke="#2A1245" stroke-width="2" stroke-linecap="round"/>
               </g>
 
-              <g transform="translate(235, 25)">
+              <g transform="translate(235, 25)" aria-hidden="true">
                 <path d="M10 25 L100 25 L95 135 Q95 145 85 145 L25 145 Q15 145 15 135 Z" fill="#FFE9DD" stroke="#2A1245" stroke-width="3.5" stroke-linejoin="round"/>
                 <path d="M15 55 L95 55 L90 135 Q90 143 82 143 L28 143 Q20 143 20 135 Z" fill="#FF6B3D"/>
                 <rect x="28" y="70" width="14" height="14" fill="#FFFFFF" opacity="0.65" rx="1"/>
                 <rect x="50" y="80" width="12" height="12" fill="#FFFFFF" opacity="0.65" rx="1"/>
                 <rect x="68" y="68" width="13" height="13" fill="#FFFFFF" opacity="0.65" rx="1"/>
                 <rect x="38" y="95" width="11" height="11" fill="#FFFFFF" opacity="0.65" rx="1"/>
+                <!-- Single clean straw stroke (was 2 overlapping lines) -->
                 <line x1="60" y1="5" x2="80" y2="65" stroke="#FF4E78" stroke-width="6" stroke-linecap="round"/>
-                <line x1="60" y1="5" x2="80" y2="65" stroke="#2A1245" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
               </g>
 
-              <g transform="translate(40, 158)">
+              <g transform="translate(40, 158)" aria-hidden="true">
                 <path d="M5 8 Q15 -2 25 8 L25 22 Q15 32 5 22 Z" fill="#FF4E78" stroke="#2A1245" stroke-width="2.5" stroke-linejoin="round"/>
                 <path d="M2 8 L28 8 L24 2 L20 6 L16 1 L12 6 L8 1 L4 6 Z" fill="#5DAE3A" stroke="#2A1245" stroke-width="2" stroke-linejoin="round"/>
                 <circle cx="11" cy="16" r="1" fill="#FFE4ED"/>
@@ -169,7 +168,7 @@ tailwind.config = {
                 <circle cx="15" cy="24" r="1" fill="#FFE4ED"/>
               </g>
 
-              <g transform="translate(335, 145)">
+              <g transform="translate(335, 145)" aria-hidden="true">
                 <rect x="13" y="0" width="7" height="42" fill="#F2C14E" stroke="#2A1245" stroke-width="2.5" stroke-linejoin="round"/>
                 <rect x="0" y="13" width="33" height="7" fill="#F2C14E" stroke="#2A1245" stroke-width="2.5" stroke-linejoin="round"/>
               </g>
@@ -217,14 +216,13 @@ tailwind.config = {
             </h2>
             <p class="text-plum-soft mt-6 max-w-md text-lg">From loaded teas to protein smoothies — a few favorites, made fresh every time. Full menu on the order page.</p>
           </div>
-          <a href="[YOUR_ORDER_PAGE_URL]" class="self-start md:self-end inline-flex items-center gap-2 font-semibold border-b-2 border-plum pb-1 hover:text-strawberry hover:border-strawberry transition-colors shrink-0">
+          <a href="order.html" class="self-start md:self-end inline-flex items-center gap-2 font-semibold border-b-2 border-plum pb-1 hover:text-strawberry hover:border-strawberry transition-colors shrink-0">
             See full menu <i class="ph ph-arrow-right text-base"></i>
           </a>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-6 auto-rows-[minmax(180px,auto)] gap-4 md:gap-6">
 
-          <!-- Card 1: Hero loaded tea -->
           <article class="menu-card relative col-span-2 md:col-span-3 row-span-2 bg-lavender rounded-3xl p-7 md:p-10 overflow-hidden">
             <span class="corner-mark bg-plum text-cream">★</span>
             <div class="font-mono text-[11px] uppercase tracking-[0.18em] text-plum/70 mb-3">Loaded Tea · Bestseller</div>
@@ -234,7 +232,6 @@ tailwind.config = {
             <div aria-hidden="true" class="absolute -bottom-16 -right-16 w-56 h-56 rounded-full bg-tangerine/30"></div>
           </article>
 
-          <!-- Card 2: Protein smoothie -->
           <article class="menu-card relative col-span-2 md:col-span-3 bg-strawberry text-cream rounded-3xl p-6 md:p-8 overflow-hidden">
             <div class="font-mono text-[11px] uppercase tracking-[0.18em] opacity-80 mb-3">Protein Smoothie</div>
             <h3 class="font-display font-extrabold text-3xl md:text-4xl tracking-ultra leading-[0.92]">Cookies<br>&amp; Cream</h3>
@@ -242,21 +239,18 @@ tailwind.config = {
             <div aria-hidden="true" class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-cream/20 blur-2xl"></div>
           </article>
 
-          <!-- Card 3: 3-in-1 specialty -->
           <article class="menu-card relative col-span-1 md:col-span-2 bg-cream-warm rounded-3xl p-6 border border-plum/10">
             <div class="font-mono text-[11px] uppercase tracking-[0.18em] text-plum-soft mb-3">3-in-1</div>
             <h3 class="font-display font-extrabold text-2xl md:text-3xl tracking-ultra leading-[0.95]">Energy · Collagen · Protein</h3>
             <div class="font-mono text-sm font-bold mt-4">Custom blend</div>
           </article>
 
-          <!-- Card 4: Fruit smoothie -->
           <article class="menu-card relative col-span-1 md:col-span-1 bg-tangerine text-plum rounded-3xl p-5 overflow-hidden">
             <div class="font-mono text-[11px] uppercase tracking-[0.18em] opacity-80 mb-2">Fruit</div>
             <h3 class="font-display font-extrabold text-lg md:text-xl tracking-ultra leading-[0.95]">Mango<br>Paradise</h3>
             <div class="font-mono text-xs font-bold mt-3">$6.50</div>
           </article>
 
-          <!-- Card 5: Protein coffee -->
           <article class="menu-card relative col-span-2 md:col-span-3 bg-plum text-cream rounded-3xl p-6 md:p-8 overflow-hidden">
             <div aria-hidden="true" class="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-lavender/40 blur-2xl"></div>
             <div class="font-mono text-[11px] uppercase tracking-[0.18em] opacity-60 mb-3">Protein Coffee</div>
@@ -265,8 +259,7 @@ tailwind.config = {
             <div class="font-mono text-sm font-bold mt-4">From $6.00</div>
           </article>
 
-          <!-- Card 6: See full menu -->
-          <a href="[YOUR_ORDER_PAGE_URL]" class="menu-card relative col-span-2 md:col-span-3 bg-strawberry/10 border-2 border-dashed border-strawberry/40 rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[180px] hover:bg-strawberry/20 hover:border-strawberry transition-colors group">
+          <a href="order.html" class="menu-card relative col-span-2 md:col-span-3 bg-strawberry/10 border-2 border-dashed border-strawberry/40 rounded-3xl p-6 md:p-8 flex flex-col justify-between min-h-[180px] hover:bg-strawberry/20 hover:border-strawberry transition-colors group">
             <div class="flex items-center gap-2 text-strawberry font-mono text-[11px] uppercase tracking-[0.18em]">
               <i class="ph ph-list-magnifying-glass text-base"></i> 50+ options
             </div>
@@ -325,6 +318,7 @@ tailwind.config = {
           <h2 class="font-display font-extrabold text-5xl md:text-7xl tracking-ultra leading-[0.9]">
             Three steps.<br>One cup.
           </h2>
+          <p class="text-plum-soft mt-6 text-lg max-w-xl mx-auto">Up to 10 drinks per order. We confirm via DM and start blending.</p>
         </div>
         <div class="grid md:grid-cols-3 gap-4 md:gap-6">
           <div class="bg-cream-warm rounded-3xl p-8 border border-plum/5 hover:border-strawberry/60 transition-colors">
@@ -404,13 +398,13 @@ tailwind.config = {
               <i class="ph ph-arrow-right text-xl"></i>
             </a>
 
-            <a href="tel:+15555550100" class="cta-primary flex items-center gap-5 p-6 bg-cream-warm border border-plum/10 rounded-2xl hover:border-plum hover:bg-cream transition-colors">
+            <a href="tel:+19363140685" class="cta-primary flex items-center gap-5 p-6 bg-cream-warm border border-plum/10 rounded-2xl hover:border-plum hover:bg-cream transition-colors">
               <div class="w-12 h-12 rounded-full bg-plum text-cream flex items-center justify-center shrink-0">
                 <i class="ph ph-phone text-2xl"></i>
               </div>
               <div class="flex-1">
                 <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-plum-soft mb-1">Or call</div>
-                <div class="font-display font-bold text-lg">(555) 555-0100</div>
+                <div class="font-display font-bold text-lg">(936) 314-0685</div>
               </div>
               <i class="ph ph-arrow-right text-xl"></i>
             </a>
@@ -436,21 +430,22 @@ tailwind.config = {
             <div class="space-y-6">
               <div>
                 <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-cream/55 mb-1.5 flex items-center gap-1.5"><i class="ph ph-map-pin"></i> Address</div>
-                <div class="font-display font-bold text-lg">[Your street address]</div>
-                <div class="text-cream/70">[City, State ZIP]</div>
+                <div class="font-display font-bold text-lg">18417 Highway 105 W, Suite 5</div>
+                <div class="text-cream/70">Montgomery, TX 77356</div>
               </div>
               <div>
                 <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-cream/55 mb-1.5 flex items-center gap-1.5"><i class="ph ph-clock"></i> Hours</div>
                 <div class="font-display font-bold text-lg">Mon–Fri · 7am – 7pm</div>
-                <div class="font-display font-bold text-lg">Sat–Sun · 8am – 6pm</div>
+                <div class="font-display font-bold text-lg">Sat · 10am – 4pm</div>
+                <div class="font-display font-bold text-lg text-cream/55">Sun · Closed</div>
               </div>
               <div>
                 <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-cream/55 mb-1.5 flex items-center gap-1.5"><i class="ph ph-phone"></i> Phone</div>
-                <div class="font-display font-bold text-lg">(555) 555-0100</div>
+                <div class="font-display font-bold text-lg">(936) 314-0685</div>
               </div>
             </div>
 
-            <a href="#" class="mt-8 inline-flex items-center gap-2 border border-cream/30 rounded-full px-5 py-3 text-sm font-semibold hover:bg-cream hover:text-plum transition-colors">
+            <a href="https://www.google.com/maps/search/?api=1&query=18417+Highway+105+W+Suite+5+Montgomery+TX+77356" target="_blank" rel="noopener" aria-label="Get directions on Google Maps" class="mt-8 inline-flex items-center gap-2 border border-cream/30 rounded-full px-5 py-3 text-sm font-semibold hover:bg-cream hover:text-plum transition-colors">
               Get directions <i class="ph ph-arrow-up-right text-base"></i>
             </a>
           </div>
@@ -468,12 +463,12 @@ tailwind.config = {
         <span class="w-9 h-9 rounded-full bg-lavender flex items-center justify-center font-display font-extrabold text-plum text-lg">B</span>
         <div>
           <div class="font-display font-bold text-base">Blended &amp; Blessed</div>
-          <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-cream/50">Smoothie &amp; Tea Bar · [City]</div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-cream/50">Smoothie &amp; Tea Bar · Montgomery, TX</div>
         </div>
       </div>
       <div class="flex items-center gap-5 sm:gap-7 text-sm">
         <a href="#menu" class="hover:text-strawberry transition-colors">Menu</a>
-        <a href="#order" class="hover:text-strawberry transition-colors">Order</a>
+        <a href="order.html" class="hover:text-strawberry transition-colors">Order</a>
         <a href="https://www.instagram.com/blendedandblessedproteinbar/" target="_blank" rel="noopener" class="hover:text-strawberry transition-colors inline-flex items-center gap-1.5"><i class="ph ph-instagram-logo"></i> Instagram</a>
       </div>
       <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-cream/45">© 2026 · Made with real fruit.</div>
