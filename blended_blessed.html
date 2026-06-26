@@ -8,6 +8,10 @@
 <meta property="og:title" content="Blended & Blessed — Smoothie & Tea Bar" />
 <meta property="og:description" content="Loaded teas. Protein smoothies. Blessed vibes. Order pickup today." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://enzonsn.github.io/MyPortfolio/blended_blessed.html" />
+<meta property="og:image" content="https://enzonsn.github.io/MyPortfolio/blended_blessed_og.svg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#2A1245" />
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23B8A6E8'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='52' font-family='sans-serif' font-weight='900' fill='%232A1245'%3EB%3C/text%3E%3C/svg%3E" />
 
@@ -68,6 +72,11 @@ tailwind.config = {
   .corner-mark { position: absolute; top: 1rem; right: 1rem; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 700; }
   .pulse-dot { animation: pulse 1.8s ease-in-out infinite; }
   @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.4); opacity: .6; } }
+  /* IG embed container — square crop so blockquotes don't break the 3-col grid */
+  .ig-embed { position: relative; width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 1rem; background: #2A1245; }
+  .ig-embed blockquote.instagram-media { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; max-width: none !important; min-width: 0 !important; margin: 0 !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; background: transparent !important; }
+  .ig-embed blockquote.instagram-media > * { display: none !important; }
+  .ig-embed-fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem; color: #FAF5EC; font-family: "JetBrains Mono", monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; }
   @media (prefers-reduced-motion: reduce) {
     .marquee-track, .reveal, .sparkle, .pulse-dot { animation: none !important; opacity: 1 !important; transform: none !important; }
   }
@@ -95,7 +104,7 @@ tailwind.config = {
     </div>
   </nav>
 
-  <!-- STATUS BANNER (NEW v4: hours-aware, identical logic to order.html) -->
+  <!-- STATUS BANNER (hours-aware) -->
   <div id="status-banner" class="border-b border-plum/10">
     <div id="status-open" class="hidden bg-lavender-soft">
       <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 py-3 flex items-center justify-between gap-3 flex-wrap">
@@ -130,10 +139,9 @@ tailwind.config = {
 
       <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center relative">
         <div class="lg:col-span-7 relative z-10">
-          <!-- HERO PILL (NEW v4: hours-aware, swaps text + dot color) -->
-          <div id="hero-pill" class="flex items-center gap-3 mb-6 transition-colors">
-            <span id="hero-pill-dot" class="inline-block w-2 h-2 rounded-full bg-strawberry animate-pulse"></span>
-            <span id="hero-pill-text" class="font-mono text-[11px] uppercase tracking-[0.18em] text-plum-soft">Open Today · Loaded Teas · Smoothies · 3-in-1</span>
+          <div id="hero-pill" class="flex items-center gap-3 mb-6">
+            <span id="hero-pill-dot" class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span id="hero-pill-text" class="font-mono text-[11px] uppercase tracking-[0.18em] text-plum-soft">Open now · Loaded Teas · Smoothies · 3-in-1</span>
           </div>
 
           <h1 class="font-display font-extrabold text-[clamp(2.75rem,7.2vw,6rem)] leading-[0.92] tracking-ultra mb-7">
@@ -155,7 +163,6 @@ tailwind.config = {
           </div>
         </div>
 
-        <!-- LOGO RECREATION (SVG) -->
         <div class="lg:col-span-5 relative">
           <div class="relative max-w-[460px] mx-auto aspect-[2/1]">
             <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" role="img" aria-label="Blended & Blessed logo">
@@ -341,17 +348,17 @@ tailwind.config = {
         </div>
         <div class="grid md:grid-cols-3 gap-4 md:gap-6">
           <div class="bg-cream-warm rounded-3xl p-8 border border-plum/5 hover:border-strawberry/60 transition-colors">
-            <div class="font-display font-extrabold text-7xl text-strawberry leading-none mb-4">1</div>
+            <div class="font-display font-extrabold text-7xl text-plum leading-none mb-4">1</div>
             <h3 class="font-display font-bold text-2xl mb-2">Pick your blend</h3>
             <p class="text-plum-soft leading-relaxed">Browse the menu, pick your energy level and boosts, or DM us for a custom build.</p>
           </div>
           <div class="bg-cream-warm rounded-3xl p-8 border border-plum/5 hover:border-tangerine/60 transition-colors">
-            <div class="font-display font-extrabold text-7xl text-tangerine leading-none mb-4">2</div>
+            <div class="font-display font-extrabold text-7xl text-plum leading-none mb-4">2</div>
             <h3 class="font-display font-bold text-2xl mb-2">DM or call</h3>
             <p class="text-plum-soft leading-relaxed">Send your order through Instagram DM or give us a quick ring. We'll confirm in minutes.</p>
           </div>
           <div class="bg-cream-warm rounded-3xl p-8 border border-plum/5 hover:border-lavender-deep/60 transition-colors">
-            <div class="font-display font-extrabold text-7xl text-lavender-deep leading-none mb-4">3</div>
+            <div class="font-display font-extrabold text-7xl text-plum leading-none mb-4">3</div>
             <h3 class="font-display font-bold text-2xl mb-2">Swing by & sip</h3>
             <p class="text-plum-soft leading-relaxed">Pickup ready in about five minutes. Walk in, grab, go.</p>
           </div>
@@ -359,7 +366,7 @@ tailwind.config = {
       </div>
     </section>
 
-    <!-- INSTAGRAM (NEW v4: 6 embed slots with clear placeholders) -->
+    <!-- INSTAGRAM (real embeds via embed.js, cropped to 1:1 in grid) -->
     <section id="feed" class="py-24 lg:py-32 px-5 sm:px-8 lg:px-10 bg-strawberry text-plum relative overflow-hidden">
       <div aria-hidden="true" class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-tangerine/40 blur-3xl"></div>
       <div aria-hidden="true" class="absolute bottom-0 left-10 flex gap-3 pointer-events-none">
@@ -384,26 +391,12 @@ tailwind.config = {
         </div>
 
         <div class="lg:col-span-5 grid grid-cols-3 gap-3">
-                  <div class="lg:col-span-5 grid grid-cols-3 gap-3">
-          <a href="https://www.instagram.com/p/DY2K3qkyWAy/" target="_blank" rel="noopener" class="aspect-square rounded-2xl overflow-hidden block group relative">
-            <img src="https://www.instagram.com/p/DY2K3qkyWAy/media/?size=l" alt="Instagram post" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'aspect-square bg-lavender rounded-2xl flex items-center justify-center\'><i class=\'ph ph-instagram-logo text-3xl text-plum\'></i></div>'">
-          </a>
-          <a href="https://www.instagram.com/p/DYkMlGYS2ro/" target="_blank" rel="noopener" class="aspect-square rounded-2xl overflow-hidden block group relative">
-            <img src="https://www.instagram.com/p/DYkMlGYS2ro/media/?size=l" alt="Instagram post" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'aspect-square bg-plum rounded-2xl flex items-center justify-center\'><i class=\'ph ph-instagram-logo text-3xl text-cream\'></i></div>'">
-          </a>
-          <a href="https://www.instagram.com/p/DYDihvQkhVN/" target="_blank" rel="noopener" class="aspect-square rounded-2xl overflow-hidden block group relative">
-            <img src="https://www.instagram.com/p/DYDihvQkhVN/media/?size=l" alt="Instagram post" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'aspect-square bg-tangerine rounded-2xl flex items-center justify-center\'><i class=\'ph ph-instagram-logo text-3xl text-plum\'></i></div>'">
-          </a>
-          <a href="https://www.instagram.com/p/DZ5fs2ny5kp/" target="_blank" rel="noopener" class="aspect-square rounded-2xl overflow-hidden block group relative">
-            <img src="https://www.instagram.com/p/DZ5fs2ny5kp/media/?size=l" alt="Instagram post" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'aspect-square bg-tangerine rounded-2xl flex items-center justify-center\'><i class=\'ph ph-instagram-logo text-3xl text-plum\'></i></div>'">
-          </a>
-          <a href="https://www.instagram.com/p/DZ0Jv91SXH9/" target="_blank" rel="noopener" class="aspect-square rounded-2xl overflow-hidden block group relative">
-            <img src="https://www.instagram.com/p/DZ0Jv91SXH9/media/?size=l" alt="Instagram post" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'aspect-square bg-lavender rounded-2xl flex items-center justify-center\'><i class=\'ph ph-instagram-logo text-3xl text-plum\'></i></div>'">
-          </a>
-          <a href="https://www.instagram.com/p/DZr8F0CS2hl/" target="_blank" rel="noopener" class="aspect-square rounded-2xl overflow-hidden block group relative">
-            <img src="https://www.instagram.com/p/DZr8F0CS2hl/media/?size=l" alt="Instagram post" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'aspect-square bg-plum rounded-2xl flex items-center justify-center\'><i class=\'ph ph-instagram-logo text-3xl text-cream\'></i></div>'">
-          </a>
-        </div>
+          <div class="ig-embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DY2K3qkyWAy/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:0; margin:0; max-width:540px; min-width:280px; padding:0; width:100%;"><a href="https://www.instagram.com/p/DY2K3qkyWAy/" target="_blank" rel="noopener" class="ig-embed-fallback"><i class="ph-fill ph-instagram-logo text-3xl"></i><span>View on IG</span></a></blockquote></div>
+          <div class="ig-embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYkMlGYS2ro/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:0; margin:0; max-width:540px; min-width:280px; padding:0; width:100%;"><a href="https://www.instagram.com/p/DYkMlGYS2ro/" target="_blank" rel="noopener" class="ig-embed-fallback"><i class="ph-fill ph-instagram-logo text-3xl"></i><span>View on IG</span></a></blockquote></div>
+          <div class="ig-embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYDihvQkhVN/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:0; margin:0; max-width:540px; min-width:280px; padding:0; width:100%;"><a href="https://www.instagram.com/p/DYDihvQkhVN/" target="_blank" rel="noopener" class="ig-embed-fallback"><i class="ph-fill ph-instagram-logo text-3xl"></i><span>View on IG</span></a></blockquote></div>
+          <div class="ig-embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZ5fs2ny5kp/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:0; margin:0; max-width:540px; min-width:280px; padding:0; width:100%;"><a href="https://www.instagram.com/p/DZ5fs2ny5kp/" target="_blank" rel="noopener" class="ig-embed-fallback"><i class="ph-fill ph-instagram-logo text-3xl"></i><span>View on IG</span></a></blockquote></div>
+          <div class="ig-embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZ0Jv91SXH9/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:0; margin:0; max-width:540px; min-width:280px; padding:0; width:100%;"><a href="https://www.instagram.com/p/DZ0Jv91SXH9/" target="_blank" rel="noopener" class="ig-embed-fallback"><i class="ph-fill ph-instagram-logo text-3xl"></i><span>View on IG</span></a></blockquote></div>
+          <div class="ig-embed"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DZr8F0CS2hl/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:0; margin:0; max-width:540px; min-width:280px; padding:0; width:100%;"><a href="https://www.instagram.com/p/DZr8F0CS2hl/" target="_blank" rel="noopener" class="ig-embed-fallback"><i class="ph-fill ph-instagram-logo text-3xl"></i><span>View on IG</span></a></blockquote></div>
         </div>
       </div>
     </section>
@@ -500,6 +493,9 @@ tailwind.config = {
     </div>
   </footer>
 
+  <!-- Instagram embed.js (lazy) -->
+  <script async src="//www.instagram.com/embed.js" onerror="document.querySelectorAll('.ig-embed').forEach(e => e.classList.add('ig-failed'))"></script>
+
   <script>
     // ============ HOURS (must match order.html exactly) ============
     const HOURS = {
@@ -527,31 +523,19 @@ tailwind.config = {
       const todayHours = HOURS[day];
       const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
-      if (todayHours === null) {
-        return { isOpen: false, message: 'Opens Monday at 7:00 AM' };
-      }
-      if (h >= todayHours.open && h < todayHours.close) {
-        return { isOpen: true, message: null };
-      }
-      if (h < todayHours.open) {
-        return { isOpen: false, message: `Opens today at ${formatTime(todayHours.open)}` };
-      }
+      if (todayHours === null) return { isOpen: false, message: 'Opens Monday at 7:00 AM' };
+      if (h >= todayHours.open && h < todayHours.close) return { isOpen: true, message: null };
+      if (h < todayHours.open) return { isOpen: false, message: `Opens today at ${formatTime(todayHours.open)}` };
       for (let i = 1; i <= 7; i++) {
         const next = (day + i) % 7;
         if (HOURS[next] !== null) {
           const isTomorrow = i === 1;
-          return {
-            isOpen: false,
-            message: isTomorrow
-              ? `Opens tomorrow at ${formatTime(HOURS[next].open)}`
-              : `Opens ${dayNames[next]} at ${formatTime(HOURS[next].open)}`,
-          };
+          return { isOpen: false, message: isTomorrow ? `Opens tomorrow at ${formatTime(HOURS[next].open)}` : `Opens ${dayNames[next]} at ${formatTime(HOURS[next].open)}` };
         }
       }
       return { isOpen: false, message: 'Opens Monday at 7:00 AM' };
     }
 
-    // ============ STATUS BANNER ============
     function updateStatusBanner() {
       const { isOpen, message } = getOpenState();
       const openEl = document.getElementById('status-open');
@@ -564,13 +548,11 @@ tailwind.config = {
       }
     }
 
-    // ============ HERO PILL (NEW v4) ============
     function updateHeroPill() {
       const { isOpen, message } = getOpenState();
       const textEl = document.getElementById('hero-pill-text');
       const dotEl = document.getElementById('hero-pill-dot');
       if (!textEl || !dotEl) return;
-
       if (isOpen) {
         textEl.textContent = 'Open now · Loaded Teas · Smoothies · 3-in-1';
         dotEl.className = 'inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse';
@@ -580,12 +562,10 @@ tailwind.config = {
       }
     }
 
-    // ============ INIT ============
     document.addEventListener('DOMContentLoaded', () => {
       updateStatusBanner();
       updateHeroPill();
 
-      // Reveal animations
       const obs = new IntersectionObserver((entries) => {
         entries.forEach(e => {
           if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
@@ -593,18 +573,21 @@ tailwind.config = {
       }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
       document.querySelectorAll('section, .menu-card, article').forEach(el => { el.classList.add('reveal'); obs.observe(el); });
 
-      // Magnetic CTAs
+      // Magnetic CTAs — with touch/pointer cancel handling
       document.querySelectorAll('.cta-primary').forEach(btn => {
+        const reset = () => { btn.style.transform = ''; };
         btn.addEventListener('pointermove', (e) => {
+          if (e.pointerType === 'touch') return;
           const r = btn.getBoundingClientRect();
           const x = e.clientX - r.left - r.width / 2;
           const y = e.clientY - r.top - r.height / 2;
           btn.style.transform = `translate(${x * 0.12}px, ${y * 0.18 - 2}px)`;
         });
-        btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
+        btn.addEventListener('pointerleave', reset);
+        btn.addEventListener('pointercancel', reset);
+        btn.addEventListener('pointerup', reset);
       });
 
-      // Refresh open/closed state every minute
       setInterval(() => { updateStatusBanner(); updateHeroPill(); }, 60000);
     });
   </script>
