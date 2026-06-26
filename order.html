@@ -1,11 +1,9 @@
-Code (html)
-html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-Order Pickup — Blended & Blessed
+<title>Order Pickup — Blended & Blessed</title>
 <meta name="description" content="Order loaded teas, protein smoothies, 3-in-1 specialties, and protein coffee for pickup at Blended & Blessed." />
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23B8A6E8'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='52' font-family='sans-serif' font-weight='900' fill='%232A1245'%3EB%3C/text%3E%3C/svg%3E" />
@@ -82,12 +80,11 @@ tailwind.config = {
 
   <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-plum focus:text-cream focus:px-4 focus:py-2 focus:rounded-full">Skip to content</a>
 
-  <!-- TOP NAV -->
   <nav class="sticky top-0 z-40 backdrop-blur-md bg-cream/85 border-b border-plum/10">
     <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 h-16 flex items-center justify-between gap-3">
       <a href="index.html" class="flex items-center gap-2.5 shrink-0">
         <span class="w-9 h-9 rounded-full bg-lavender flex items-center justify-center font-display font-extrabold text-plum text-lg">B</span>
-        <span class="font-display font-bold text-base sm:text-lg tracking-tight whitespace-nowrap">Blended &amp; Blessed</span>
+        <span class="font-display font-bold text-base sm:text-lg tracking-tight whitespace-nowrap">Blended & Blessed</span>
       </a>
       <div class="flex items-center gap-3">
         <a href="index.html" class="text-sm font-medium hover:text-strawberry transition-colors hidden sm:inline">← Home</a>
@@ -100,7 +97,6 @@ tailwind.config = {
     </div>
   </nav>
 
-  <!-- STATUS BANNER -->
   <div id="status-banner" class="border-b border-plum/10">
     <div id="status-open" class="hidden bg-lavender-soft">
       <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 py-3 flex items-center justify-between gap-3 flex-wrap">
@@ -127,31 +123,23 @@ tailwind.config = {
   </div>
 
   <main id="main" class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 py-8 lg:py-12">
-
-    <!-- PAGE HEADER -->
     <header class="mb-10 lg:mb-14">
       <div class="font-mono text-xs uppercase tracking-[0.2em] text-strawberry mb-3">// Order pickup</div>
       <h1 class="font-display font-extrabold text-5xl md:text-7xl tracking-ultra leading-[0.92] mb-4">
         Build your<br><span class="text-lavender-deep">order.</span>
       </h1>
-      <p class="text-plum-soft text-lg max-w-2xl">Pick your drinks, customize size &amp; add-ons, and send the order straight to our Instagram DM. We confirm and blend.</p>
+      <p class="text-plum-soft text-lg max-w-2xl">Pick your drinks, customize size & add-ons, and send the order straight to our Instagram DM. We confirm and blend.</p>
     </header>
 
     <div class="grid lg:grid-cols-12 gap-8 lg:gap-10">
-
-      <!-- LEFT: MENU BUILDER -->
       <div class="lg:col-span-8 space-y-8 lg:space-y-10">
-
-        <!-- STEP 1: CATEGORIES -->
         <section id="step-1">
           <div class="flex items-baseline justify-between mb-5">
             <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight"><span class="font-mono text-sm text-strawberry mr-2">01</span>Pick a category</h2>
           </div>
-
           <div id="category-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4"></div>
         </section>
 
-        <!-- STEP 2: DRINKS -->
         <section id="step-2" class="hidden">
           <div class="flex items-baseline justify-between mb-5 gap-4">
             <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight">
@@ -162,13 +150,11 @@ tailwind.config = {
             </button>
           </div>
 
-          <!-- Search -->
           <div class="relative mb-4">
             <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-plum-soft text-lg"></i>
             <input id="drink-search" type="text" placeholder="Search flavors…" class="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-cream-warm border border-plum/10 focus:border-strawberry focus:bg-cream outline-none font-medium" />
           </div>
 
-          <!-- Size selector (shown when applicable) -->
           <div id="size-selector" class="hidden mb-5 p-5 bg-cream-warm rounded-2xl border border-plum/10">
             <div class="font-mono text-[11px] uppercase tracking-[0.18em] text-plum-soft mb-3 flex items-center gap-1.5">
               <i class="ph ph-cup"></i> <span id="size-label">Choose size</span>
@@ -176,7 +162,6 @@ tailwind.config = {
             <div id="size-options" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5"></div>
           </div>
 
-          <!-- Energy level (tea only) -->
           <div id="energy-selector" class="hidden mb-5 p-5 bg-lavender-soft rounded-2xl border border-plum/10">
             <div class="font-mono text-[11px] uppercase tracking-[0.18em] text-plum mb-3 flex items-center gap-1.5">
               <i class="ph-fill ph-lightning"></i> Energy level (caffeine)
@@ -184,7 +169,6 @@ tailwind.config = {
             <div id="energy-options" class="grid grid-cols-1 sm:grid-cols-3 gap-2.5"></div>
           </div>
 
-          <!-- Add-ons -->
           <div id="addons-section" class="hidden mb-5">
             <div class="font-mono text-[11px] uppercase tracking-[0.18em] text-plum-soft mb-3 flex items-center gap-1.5">
               <i class="ph ph-plus-circle"></i> Boost it
@@ -192,10 +176,8 @@ tailwind.config = {
             <div id="addons-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-2"></div>
           </div>
 
-          <!-- Drink grid -->
           <div id="drink-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-h-[480px] overflow-y-auto pr-1 scrollbar-thin"></div>
 
-          <!-- Add to cart -->
           <div id="add-to-cart-bar" class="hidden mt-6 p-5 bg-plum text-cream rounded-2xl">
             <div class="flex items-center justify-between gap-4 flex-wrap">
               <div class="flex-1 min-w-[200px]">
@@ -209,7 +191,6 @@ tailwind.config = {
                 </button>
               </div>
             </div>
-            <!-- Cart-limit hint (shown only when full) -->
             <div id="cart-full-hint" class="hidden mt-3 pt-3 border-t border-cream/15 flex items-center gap-2 text-sm">
               <i class="ph-fill ph-warning-circle text-gold text-lg"></i>
               <span class="text-cream/80">Cart is full (10 items). Remove something below to add more.</span>
@@ -217,7 +198,6 @@ tailwind.config = {
           </div>
         </section>
 
-        <!-- STEP 3: CUSTOMER INFO -->
         <section id="step-3" class="bg-cream-warm rounded-3xl p-6 md:p-8 border border-plum/10">
           <h2 class="font-display font-bold text-2xl md:text-3xl tracking-tight mb-6">
             <span class="font-mono text-sm text-strawberry mr-2">03</span>Your info
@@ -247,7 +227,6 @@ tailwind.config = {
         </section>
       </div>
 
-      <!-- RIGHT: CART (sticky) -->
       <aside class="lg:col-span-4">
         <div class="lg:sticky lg:top-24">
           <div class="bg-plum text-cream rounded-3xl overflow-hidden shadow-xl">
@@ -258,13 +237,10 @@ tailwind.config = {
               </h2>
               <span id="cart-count" class="font-mono text-xs bg-strawberry text-plum rounded-full w-7 h-7 flex items-center justify-center font-bold">0/10</span>
             </div>
-
-            <!-- Cart-limit warning (shown only when full) -->
             <div id="cart-full-banner" class="hidden bg-strawberry/15 border-b border-strawberry/40 px-6 py-3 flex items-center gap-2 text-sm">
               <i class="ph-fill ph-warning-circle text-strawberry text-lg"></i>
               <span class="text-cream font-medium">Cart is full · 10 item max</span>
             </div>
-
             <div id="cart-empty" class="p-8 text-center">
               <div class="w-14 h-14 mx-auto rounded-full bg-lavender/20 flex items-center justify-center mb-3">
                 <i class="ph ph-shopping-bag text-2xl text-lavender"></i>
@@ -272,9 +248,7 @@ tailwind.config = {
               <div class="font-display font-bold mb-1">Cart is empty</div>
               <p class="text-cream/60 text-sm">Pick a category to start your order.</p>
             </div>
-
             <div id="cart-items" class="hidden max-h-[400px] overflow-y-auto scrollbar-thin"></div>
-
             <div id="cart-footer" class="hidden p-6 border-t border-cream/10 space-y-4">
               <div class="flex justify-between text-sm text-cream/70">
                 <span>Subtotal</span><span id="cart-subtotal">$0.00</span>
@@ -286,17 +260,13 @@ tailwind.config = {
                 <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-cream/60">Total</span>
                 <span id="cart-total" class="font-display font-extrabold text-3xl">$0.00</span>
               </div>
-
               <button id="submit-btn" class="cta-primary w-full bg-strawberry text-plum py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-gold">
                 <i class="ph ph-paper-plane-tilt text-lg"></i>
                 <span id="submit-btn-label">Send order via DM</span>
               </button>
-
               <div class="text-center font-mono text-[10px] uppercase tracking-[0.16em] text-cream/50">Opens Instagram with order pre-filled</div>
             </div>
           </div>
-
-          <!-- Help card -->
           <div class="mt-4 p-5 bg-cream-warm rounded-2xl border border-plum/10">
             <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-plum-soft mb-2">// Need help?</div>
             <a href="tel:+19363140685" class="flex items-center gap-3 text-plum hover:text-strawberry transition-colors font-semibold">
@@ -305,22 +275,19 @@ tailwind.config = {
           </div>
         </div>
       </aside>
-
     </div>
   </main>
 
-  <!-- FOOTER -->
   <footer class="bg-plum text-cream px-5 sm:px-8 lg:px-10 py-10 mt-16">
     <div class="max-w-[1400px] mx-auto flex flex-col sm:flex-row justify-between gap-4 items-start sm:items-center">
       <div class="flex items-center gap-2.5">
         <span class="w-8 h-8 rounded-full bg-lavender flex items-center justify-center font-display font-extrabold text-plum">B</span>
-        <span class="font-display font-bold">Blended &amp; Blessed</span>
+        <span class="font-display font-bold">Blended & Blessed</span>
       </div>
       <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-cream/50">© 2026 · 18417 Highway 105 W, Ste 5</div>
     </div>
   </footer>
 
-  <!-- MOBILE CART SHEET -->
   <div id="mobile-cart-overlay" class="hidden fixed inset-0 bg-plum/60 z-50 backdrop-blur-sm"></div>
   <div id="mobile-cart-sheet" class="hidden fixed bottom-0 inset-x-0 z-50 bg-plum text-cream rounded-t-3xl max-h-[90vh] flex flex-col">
     <div class="p-5 border-b border-cream/10 flex items-center justify-between">
@@ -345,26 +312,23 @@ tailwind.config = {
     </div>
   </div>
 
-  <!-- TOAST -->
   <div id="toast" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] bg-plum text-cream px-5 py-3 rounded-full font-semibold shadow-2xl flex items-center gap-2">
     <i class="ph-fill ph-check-circle text-strawberry text-xl"></i>
     <span id="toast-msg">Added to cart</span>
   </div>
 
 <script>
-// ============ CART LIMIT ============
 const CART_LIMIT = 10;
 function isCartFull() { return state && state.cart.length >= CART_LIMIT; }
 
-// ============ MENU DATA ============
 const HOURS = {
-  1: { open: 7,  close: 19 }, // Mon
-  2: { open: 7,  close: 19 }, // Tue
-  3: { open: 7,  close: 19 }, // Wed
-  4: { open: 7,  close: 19 }, // Thu
-  5: { open: 7,  close: 19 }, // Fri
-  6: { open: 10, close: 16 }, // Sat
-  0: null,                      // Sun closed
+  1: { open: 7,  close: 19 },
+  2: { open: 7,  close: 19 },
+  3: { open: 7,  close: 19 },
+  4: { open: 7,  close: 19 },
+  5: { open: 7,  close: 19 },
+  6: { open: 10, close: 16 },
+  0: null,
 };
 const SHOP_INFO = {
   name: 'Blended & Blessed',
@@ -380,32 +344,25 @@ const MENU = {
     sub: 'Sugar-free · 20 cal · base 160mg caffeine',
     icon: 'ph-drop',
     color: 'lavender',
-    flavors: [
-      'Hydro Flow','Candy Crush','Galaxy','Mexican Lollipop','Peach Sunset','Vegas Night','Peaches & Berries','Jimmy Buffet','Starburst',
-      'New Evolution','Paradise','Jolly Rancher','Epic Sunrise','Orange Pineapple Mango','Margarita','Very Berry Lemonade','Blackberry Mojito','Casanova',
-      'Turn Up Tea','Black Pearl','Bad & Boujee','Dracula','Loaded Pinata','Volcano Blast','Cucumber Watermelon','Yellow Stone','Malibu',
-      'Skittles','Bad Bunny','Cherry Limeade','Hocus Pocus','Island Girl','Sour Gummy','Emerald Island','Daisy Duke','Cucumber Breeze',
-      'Strawberry Watermelon','Loco Coco','Fire Cracker','Magma','Mango Tango','Energy Overload','Beach Babe','Pretty in Pink','Southern Belle',
-      'The Grape Escape','Bahama Mama','Blue Lagoon','Blueberry Pop','Coconut Lime','Airhead Extreme','Johnny Cash','Ocean Wave','Sunkissed'
-    ],
+    flavors: ['Hydro Flow','Candy Crush','Galaxy','Mexican Lollipop','Peach Sunset','Vegas Night','Peaches & Berries','Jimmy Buffet','Starburst','New Evolution','Paradise','Jolly Rancher','Epic Sunrise','Orange Pineapple Mango','Margarita','Very Berry Lemonade','Blackberry Mojito','Casanova','Turn Up Tea','Black Pearl','Bad & Boujee','Dracula','Loaded Pinata','Volcano Blast','Cucumber Watermelon','Yellow Stone','Malibu','Skittles','Bad Bunny','Cherry Limeade','Hocus Pocus','Island Girl','Sour Gummy','Emerald Island','Daisy Duke','Cucumber Breeze','Strawberry Watermelon','Loco Coco','Fire Cracker','Magma','Mango Tango','Energy Overload','Beach Babe','Pretty in Pink','Southern Belle','The Grape Escape','Bahama Mama','Blue Lagoon','Blueberry Pop','Coconut Lime','Airhead Extreme','Johnny Cash','Ocean Wave','Sunkissed'],
     sizes: [
       { id: 'lvl1', label: 'LVL 1', sub: '16oz · 160mg', price: 5.50 },
       { id: 'lvl2', label: 'LVL 2', sub: '16oz · 200mg', price: 6.50 },
       { id: 'lvl3', label: 'LVL 3', sub: '44oz · 275mg', price: 8.50 },
     ],
     addons: [
-      { id: 'immunity',   label: 'Immunity',     price: 0.75 },
-      { id: 'hydration',  label: 'Hydration',    price: 1.50 },
-      { id: 'collagen',   label: 'Collagen',     price: 1.50 },
-      { id: 'fat',        label: 'Fat Release',  price: 2.50 },
-      { id: 'fiber',      label: 'Fiber',        price: 1.50 },
-      { id: 'probiotic',  label: 'Probiotic',    price: 1.50 },
-      { id: 'protein',    label: 'Protein',      price: 1.50 },
-      { id: 'niteworks',  label: 'Nite Works',   price: 2.50 },
-      { id: 'aloe',       label: 'Aloe Vera',    price: 1.00 },
-      { id: 'vitc',       label: 'Vitamin C',    price: 0.75 },
-      { id: 'creatine',   label: 'Creatine',     price: 1.25 },
-      { id: 'bcaa',       label: 'BCAAs',        price: 1.25 },
+      { id: 'immunity', label: 'Immunity', price: 0.75 },
+      { id: 'hydration', label: 'Hydration', price: 1.50 },
+      { id: 'collagen', label: 'Collagen', price: 1.50 },
+      { id: 'fat', label: 'Fat Release', price: 2.50 },
+      { id: 'fiber', label: 'Fiber', price: 1.50 },
+      { id: 'probiotic', label: 'Probiotic', price: 1.50 },
+      { id: 'protein', label: 'Protein', price: 1.50 },
+      { id: 'niteworks', label: 'Nite Works', price: 2.50 },
+      { id: 'aloe', label: 'Aloe Vera', price: 1.00 },
+      { id: 'vitc', label: 'Vitamin C', price: 0.75 },
+      { id: 'creatine', label: 'Creatine', price: 1.25 },
+      { id: 'bcaa', label: 'BCAAs', price: 1.25 },
     ],
   },
   'three-in-one': {
@@ -413,14 +370,7 @@ const MENU = {
     sub: 'Energy + Collagen + Protein included',
     icon: 'ph-flame',
     color: 'strawberry',
-    flavors: [
-      'Hydro Flow','Candy Crush','Galaxy','Mexican Lollipop','Peach Sunset','Vegas Night','Jimmy Buffet','Starburst',
-      'New Evolution','Paradise','Jolly Rancher','Epic Sunrise','Orange Pineapple Mango','Margarita','Very Berry Lemonade','Casanova',
-      'Turn Up Tea','Black Pearl','Bad & Boujee','Dracula','Loaded Pinata','Volcano Blast','Emerald Island','Malibu',
-      'Skittles','Bad Bunny','Cherry Limeade','Hocus Pocus','Island Girl','Sour Gummy','Daisy Duke','Cucumber Breeze',
-      'Strawberry Watermelon','Loco Coco','Fire Cracker','Magma','Mango Tango','Energy Overload','Beach Babe','Pretty in Pink','Southern Belle',
-      'The Grape Escape','Bahama Mama','Blue Lagoon','Blueberry Pop','Coconut Lime','Airhead Extreme','Ocean Wave','Sunkissed'
-    ],
+    flavors: ['Hydro Flow','Candy Crush','Galaxy','Mexican Lollipop','Peach Sunset','Vegas Night','Jimmy Buffet','Starburst','New Evolution','Paradise','Jolly Rancher','Epic Sunrise','Orange Pineapple Mango','Margarita','Very Berry Lemonade','Casanova','Turn Up Tea','Black Pearl','Bad & Boujee','Dracula','Loaded Pinata','Volcano Blast','Emerald Island','Malibu','Skittles','Bad Bunny','Cherry Limeade','Hocus Pocus','Island Girl','Sour Gummy','Daisy Duke','Cucumber Breeze','Strawberry Watermelon','Loco Coco','Fire Cracker','Magma','Mango Tango','Energy Overload','Beach Babe','Pretty in Pink','Southern Belle','The Grape Escape','Bahama Mama','Blue Lagoon','Blueberry Pop','Coconut Lime','Airhead Extreme','Ocean Wave','Sunkissed'],
     fixedPrice: 9.95,
     note: 'Energy + Collagen + Protein already included',
   },
@@ -431,23 +381,23 @@ const MENU = {
     color: 'plum',
     flavors: ['Java Chip','Churro','Peanut Butter Cup','Caramel Macchiato','Birthday Cake','Fruity Pebbels','Tres Leches','Cinnamon Toast Crunch','Apple Pie','Chunky Monkey','Double Stuffed Oreo','Vanilla Ice Cream','Snicker Doodle','Pecan Pie','Brownie Batter','Thin Mint','Coconut Cream Pie','Strawberry Cheesecake','P.B Banana','Southern Strawberry','Caramel Pretzel','Cookies & Cream','Red Velvet'],
     sizes: [
-      { id: 'med',    label: 'Medium',     sub: '200 cal · 24g protein', price: 9.00 },
-      { id: 'lg',     label: 'Large',      sub: '250 cal · 32g protein', price: 11.00 },
-      { id: 'muscle', label: 'Muscle Mass',sub: '300 cal · 40g protein', price: 12.00 },
+      { id: 'med', label: 'Medium', sub: '200 cal · 24g protein', price: 9.00 },
+      { id: 'lg', label: 'Large', sub: '250 cal · 32g protein', price: 11.00 },
+      { id: 'muscle', label: 'Muscle Mass', sub: '300 cal · 40g protein', price: 12.00 },
     ],
     addons: [
-      { id: 'almond',  label: 'Almond milk',  price: 0.50 },
-      { id: 'oat',     label: 'Oat milk',     price: 0.50 },
-      { id: 'energy',  label: 'Energy Boost', price: 1.50 },
+      { id: 'almond', label: 'Almond milk', price: 0.50 },
+      { id: 'oat', label: 'Oat milk', price: 0.50 },
+      { id: 'energy', label: 'Energy Boost', price: 1.50 },
       { id: 'workout', label: 'Post Workout', price: 2.50 },
       { id: 'protcof', label: 'Protein Coffee', price: 2.50 },
-      { id: 'fatburn', label: 'Fat Burner',   price: 5.00 },
-      { id: 'fiber',   label: 'Fiber',        price: 1.50 },
-      { id: 'whip',    label: 'Whip Cream',   price: 0.15 },
-      { id: 'syrup',   label: 'Syrup Pump',   price: 0.25 },
-      { id: 'pbfit',   label: 'PBfit',        price: 0.50 },
-      { id: 'pb',      label: 'Peanut Butter',price: 0.50 },
-      { id: 'oats',    label: 'Rolled Oats',  price: 0.50 },
+      { id: 'fatburn', label: 'Fat Burner', price: 5.00 },
+      { id: 'fiber', label: 'Fiber', price: 1.50 },
+      { id: 'whip', label: 'Whip Cream', price: 0.15 },
+      { id: 'syrup', label: 'Syrup Pump', price: 0.25 },
+      { id: 'pbfit', label: 'PBfit', price: 0.50 },
+      { id: 'pb', label: 'Peanut Butter', price: 0.50 },
+      { id: 'oats', label: 'Rolled Oats', price: 0.50 },
     ],
   },
   'fruit-smoothie': {
@@ -458,21 +408,21 @@ const MENU = {
     flavors: ['Blueberry Swirl','Orange Banana Mango','Medly Strawberry','Strawberry Banana','Black Berry','Mango Pineapple','Banana Pudding','Banana Pineapple','Pina Colada','Peach Mango','Mixed Berries','Strawberry Mango','Citrus Paradise','Chocolate Strawberry','Mangonada'],
     sizes: [
       { id: 'med', label: 'Medium', sub: '175 cal · 18g protein', price: 9.00 },
-      { id: 'lg',  label: 'Large',  sub: '195 cal · 24g protein', price: 11.00 },
+      { id: 'lg', label: 'Large', sub: '195 cal · 24g protein', price: 11.00 },
     ],
     addons: [
-      { id: 'almond',  label: 'Almond milk',  price: 0.50 },
-      { id: 'oat',     label: 'Oat milk',     price: 0.50 },
-      { id: 'energy',  label: 'Energy Boost', price: 1.50 },
+      { id: 'almond', label: 'Almond milk', price: 0.50 },
+      { id: 'oat', label: 'Oat milk', price: 0.50 },
+      { id: 'energy', label: 'Energy Boost', price: 1.50 },
       { id: 'workout', label: 'Post Workout', price: 2.50 },
       { id: 'protcof', label: 'Protein Coffee', price: 2.50 },
       { id: 'fruit-blk', label: 'Blackberries', price: 0.50 },
       { id: 'fruit-str', label: 'Strawberries', price: 0.50 },
-      { id: 'fruit-mng', label: 'Mangoes',      price: 0.50 },
-      { id: 'fruit-bnn', label: 'Bananas',      price: 0.50 },
-      { id: 'fruit-pch', label: 'Peaches',      price: 0.50 },
-      { id: 'fruit-blu', label: 'Blueberries',  price: 0.50 },
-      { id: 'whip',    label: 'Whip Cream',   price: 0.15 },
+      { id: 'fruit-mng', label: 'Mangoes', price: 0.50 },
+      { id: 'fruit-bnn', label: 'Bananas', price: 0.50 },
+      { id: 'fruit-pch', label: 'Peaches', price: 0.50 },
+      { id: 'fruit-blu', label: 'Blueberries', price: 0.50 },
+      { id: 'whip', label: 'Whip Cream', price: 0.15 },
     ],
   },
   'protein-coffee': {
@@ -483,17 +433,17 @@ const MENU = {
     flavors: ['Caramel Macchiato','Banana Nut PB','Cinnamon Dolce','Dulce De Leche','French Vanilla','Strawberry Blond','Chocolate Mocha','Oreo Swirl','Caramel Cheesecake','Matcha'],
     sizes: [
       { id: 'med', label: 'Medium 24oz', sub: 'Latte', price: 7.00 },
-      { id: 'lg',  label: 'Large 32oz',  sub: 'Specialty', price: 7.50 },
+      { id: 'lg', label: 'Large 32oz', sub: 'Specialty', price: 7.50 },
     ],
     milkOptions: [
       { id: 'regular', label: 'Regular milk', price: 0 },
-      { id: 'almond',  label: 'Almond milk',  price: 0.50 },
-      { id: 'oat',     label: 'Oat milk',     price: 0.50 },
+      { id: 'almond', label: 'Almond milk', price: 0.50 },
+      { id: 'oat', label: 'Oat milk', price: 0.50 },
     ],
     addons: [
-      { id: 'whip',   label: 'Whip Cream',   price: 0.15 },
-      { id: 'syrup',  label: 'Syrup Pump',   price: 0.25 },
-      { id: 'extra',  label: 'Extra Toppings',price: 0.50 },
+      { id: 'whip', label: 'Whip Cream', price: 0.15 },
+      { id: 'syrup', label: 'Syrup Pump', price: 0.25 },
+      { id: 'extra', label: 'Extra Toppings', price: 0.50 },
     ],
   },
   'combos': {
@@ -503,8 +453,8 @@ const MENU = {
     color: 'strawberry',
     isCombo: true,
     combos: [
-      { id: 'c1', name: 'Coffee & Donuts',  a: 'protein-coffee', bNote: 'Donut (assorted)' },
-      { id: 'c2', name: 'Loaded Tea & Chips', a: 'loaded-tea',    bNote: 'Side of chips' },
+      { id: 'c1', name: 'Coffee & Donuts', a: 'protein-coffee', bNote: 'Donut (assorted)' },
+      { id: 'c2', name: 'Loaded Tea & Chips', a: 'loaded-tea', bNote: 'Side of chips' },
       { id: 'c3', name: 'Shake & Single Tea Kit', a: 'protein-smoothie', bNote: 'Single-serve tea kit' },
       { id: 'c4', name: 'Coffee & Parfait', a: 'protein-coffee', bNote: 'Parfait cup' },
       { id: 'c5', name: 'Any Drink & Shake on the Go', a: 'any-drink', bNote: 'Shake-on-the-go bottle' },
@@ -513,7 +463,6 @@ const MENU = {
   },
 };
 
-// ============ STATE ============
 const state = {
   cart: [],
   currentCategory: null,
@@ -524,33 +473,20 @@ const state = {
   search: '',
 };
 
-// ============ OPEN STATE ============
 function getOpenState() {
   const now = new Date();
   const day = now.getDay();
   const h = now.getHours() + now.getMinutes()/60;
   const todayHours = HOURS[day];
   const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-
-  if (todayHours === null) {
-    return { isOpen: false, message: 'Opens Monday at 7:00 AM' };
-  }
-  if (h >= todayHours.open && h < todayHours.close) {
-    return { isOpen: true, message: null };
-  }
-  if (h < todayHours.open) {
-    return { isOpen: false, message: `Opens today at ${formatTime(todayHours.open)}` };
-  }
+  if (todayHours === null) return { isOpen: false, message: 'Opens Monday at 7:00 AM' };
+  if (h >= todayHours.open && h < todayHours.close) return { isOpen: true, message: null };
+  if (h < todayHours.open) return { isOpen: false, message: `Opens today at ${formatTime(todayHours.open)}` };
   for (let i = 1; i <= 7; i++) {
     const next = (day + i) % 7;
     if (HOURS[next] !== null) {
       const isTomorrow = i === 1;
-      return {
-        isOpen: false,
-        message: isTomorrow
-          ? `Opens tomorrow at ${formatTime(HOURS[next].open)}`
-          : `Opens ${dayNames[next]} at ${formatTime(HOURS[next].open)}`,
-      };
+      return { isOpen: false, message: isTomorrow ? `Opens tomorrow at ${formatTime(HOURS[next].open)}` : `Opens ${dayNames[next]} at ${formatTime(HOURS[next].open)}` };
     }
   }
   return { isOpen: false, message: 'Opens Monday at 7:00 AM' };
@@ -573,7 +509,6 @@ function updateStatusBanner() {
     const b = document.getElementById(id);
     if (b) {
       b.disabled = !isOpen;
-      const label = b.querySelector('span') || b;
       if (!isOpen) b.title = message;
     }
   });
@@ -581,31 +516,19 @@ function updateStatusBanner() {
   if (lbl) lbl.textContent = isOpen ? 'Send order via DM' : `Closed — ${message}`;
 }
 
-// ============ RENDER CATEGORIES ============
 const CATEGORY_ORDER = ['loaded-tea','three-in-one','protein-smoothie','fruit-smoothie','protein-coffee','combos'];
 
 function renderCategories() {
   const grid = document.getElementById('category-grid');
-  const colorBg = {
-    lavender: 'bg-lavender',
-    strawberry: 'bg-strawberry',
-    plum: 'bg-plum text-cream',
-  };
+  const colorBg = { lavender: 'bg-lavender', strawberry: 'bg-strawberry', plum: 'bg-plum text-cream' };
   grid.innerHTML = CATEGORY_ORDER.map(id => {
     const c = MENU[id];
     const bg = colorBg[c.color] || 'bg-cream-warm';
-    return `
-      <button data-cat="${id}" class="cat-btn cta-primary text-left p-5 rounded-2xl border-2 border-plum/10 hover:border-plum ${bg} hover:-translate-y-0.5 transition-all">
-        <i class="ph ${c.icon} text-2xl mb-2"></i>
-        <div class="font-display font-extrabold text-lg leading-tight">${c.label}</div>
-        <div class="text-xs opacity-80 mt-1 leading-snug">${c.sub}</div>
-      </button>
-    `;
+    return `<button data-cat="${id}" class="cat-btn cta-primary text-left p-5 rounded-2xl border-2 border-plum/10 hover:border-plum ${bg} hover:-translate-y-0.5 transition-all"><i class="ph ${c.icon} text-2xl mb-2"></i><div class="font-display font-extrabold text-lg leading-tight">${c.label}</div><div class="text-xs opacity-80 mt-1 leading-snug">${c.sub}</div></button>`;
   }).join('');
   grid.querySelectorAll('.cat-btn').forEach(b => b.addEventListener('click', () => selectCategory(b.dataset.cat)));
 }
 
-// ============ CATEGORY FLOW ============
 function selectCategory(id) {
   state.currentCategory = id;
   state.currentFlavor = null;
@@ -614,24 +537,18 @@ function selectCategory(id) {
   state.currentAddons = new Set();
   state.search = '';
   document.getElementById('drink-search').value = '';
-
   document.getElementById('step-2').classList.remove('hidden');
   document.getElementById('step-2').scrollIntoView({ behavior: 'smooth', block: 'start' });
-
   const c = MENU[id];
-
   document.getElementById('size-selector').classList.toggle('hidden', !c.sizes && !c.isCombo);
   document.getElementById('energy-selector').classList.toggle('hidden', id !== 'loaded-tea');
   document.getElementById('addons-section').classList.toggle('hidden', !c.addons);
   document.getElementById('add-to-cart-bar').classList.add('hidden');
-
   document.getElementById('step2-title').textContent = c.isCombo ? 'Pick your combo' : 'Pick a drink';
-
   if (c.sizes) renderSizeOptions(c);
   if (c.addons) renderAddonOptions(c);
   if (c.isCombo) renderCombos();
   else renderDrinks(c);
-
   updateBuildSummary();
   refreshCartLimitUI();
 }
@@ -639,15 +556,9 @@ function selectCategory(id) {
 function renderSizeOptions(c) {
   document.getElementById('size-label').textContent = c.milkOptions ? 'Choose size & milk' : 'Choose size';
   const wrap = document.getElementById('size-options');
-  wrap.innerHTML = c.sizes.map(s => `
-    <button data-size="${s.id}" class="size-tile text-left p-3.5 rounded-xl border-2 border-plum/15 bg-cream hover:border-plum">
-      <div class="font-display font-bold text-base">${s.label}</div>
-      <div class="text-xs opacity-70 mt-0.5">${s.sub}</div>
-      <div class="font-mono text-xs font-bold mt-1.5">$${s.price.toFixed(2)}</div>
-    </button>
-  `).join('');
+  wrap.innerHTML = c.sizes.map(s => `<button data-size="${s.id}" class="size-tile text-left p-3.5 rounded-xl border-2 border-plum/15 bg-cream hover:border-plum"><div class="font-display font-bold text-base">${s.label}</div><div class="text-xs opacity-70 mt-0.5">${s.sub}</div><div class="font-mono text-xs font-bold mt-1.5">${s.price.toFixed(2)}</div></button>`).join('');
   if (c.milkOptions) {
-    wrap.innerHTML += `<div class="col-span-full mt-3"><div class="font-mono text-[10px] uppercase tracking-[0.18em] text-plum-soft mb-2">Milk</div><div class="flex flex-wrap gap-2">${c.milkOptions.map(m => `<button data-milk="${m.id}" class="add-chip text-sm px-3 py-1.5 rounded-full border border-plum/15 bg-cream ${m.id==='regular'?'selected':''}">${m.label}${m.price?` +$${m.price.toFixed(2)}`:''}</button>`).join('')}</div></div>`;
+    wrap.innerHTML += `<div class="col-span-full mt-3"><div class="font-mono text-[10px] uppercase tracking-[0.18em] text-plum-soft mb-2">Milk</div><div class="flex flex-wrap gap-2">${c.milkOptions.map(m => `<button data-milk="${m.id}" class="add-chip text-sm px-3 py-1.5 rounded-full border border-plum/15 bg-cream ${m.id==='regular'?'selected':''}">${m.label}${m.price?` +${m.price.toFixed(2)}`:''}</button>`).join('')}</div></div>`;
     wrap.querySelectorAll('[data-milk]').forEach(b => b.addEventListener('click', () => {
       state.currentMilk = b.dataset.milk;
       wrap.querySelectorAll('[data-milk]').forEach(x => x.classList.remove('selected'));
@@ -664,12 +575,7 @@ function renderSizeOptions(c) {
 }
 
 function renderAddonOptions(c) {
-  document.getElementById('addons-grid').innerHTML = c.addons.map(a => `
-    <button data-addon="${a.id}" class="add-chip text-left p-2.5 rounded-xl border border-plum/15 bg-cream hover:border-plum text-sm">
-      <div class="font-semibold">${a.label}</div>
-      <div class="font-mono text-[10px] opacity-70">+$${a.price.toFixed(2)}</div>
-    </button>
-  `).join('');
+  document.getElementById('addons-grid').innerHTML = c.addons.map(a => `<button data-addon="${a.id}" class="add-chip text-left p-2.5 rounded-xl border border-plum/15 bg-cream hover:border-plum text-sm"><div class="font-semibold">${a.label}</div><div class="font-mono text-[10px] opacity-70">+${a.price.toFixed(2)}</div></button>`).join('');
   document.getElementById('addons-grid').querySelectorAll('[data-addon]').forEach(b => b.addEventListener('click', () => {
     const id = b.dataset.addon;
     if (state.currentAddons.has(id)) { state.currentAddons.delete(id); b.classList.remove('selected'); }
@@ -683,11 +589,7 @@ function renderDrinks(c) {
   const list = c.flavors.filter(f => f.toLowerCase().includes(state.search.toLowerCase()));
   wrap.innerHTML = list.length === 0
     ? `<div class="col-span-full text-center py-12 text-plum-soft"><i class="ph ph-magnifying-glass text-3xl mb-2 block"></i>No flavors match "${state.search}"</div>`
-    : list.map(f => `
-      <button data-flavor="${f}" class="drink-card text-left p-3 rounded-xl border-2 border-plum/10 bg-cream-warm hover:border-strawberry">
-        <div class="font-display font-bold text-sm leading-tight">${f}</div>
-      </button>
-    `).join('');
+    : list.map(f => `<button data-flavor="${f}" class="drink-card text-left p-3 rounded-xl border-2 border-plum/10 bg-cream-warm hover:border-strawberry"><div class="font-display font-bold text-sm leading-tight">${f}</div></button>`).join('');
   wrap.querySelectorAll('.drink-card').forEach(b => b.addEventListener('click', () => {
     state.currentFlavor = b.dataset.flavor;
     wrap.querySelectorAll('.drink-card').forEach(x => x.classList.remove('selected'));
@@ -699,33 +601,14 @@ function renderDrinks(c) {
 function renderCombos() {
   const wrap = document.getElementById('drink-grid');
   wrap.classList.remove('max-h-[480px]','overflow-y-auto','pr-1','scrollbar-thin');
-  wrap.innerHTML = MENU['combos'].combos.map(co => `
-    <div class="col-span-full bg-strawberry/10 border-2 border-strawberry/40 rounded-2xl p-5">
-      <div class="flex items-start justify-between gap-3 flex-wrap">
-        <div class="flex-1 min-w-[200px]">
-          <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-strawberry mb-1.5 flex items-center gap-1"><i class="ph-fill ph-gift"></i> Combo · save 10%</div>
-          <div class="font-display font-extrabold text-xl">${co.name}</div>
-          <div class="text-sm text-plum-soft mt-1">Slot 1: pick a ${labelFor(co.a)} · Slot 2: ${co.bNote}</div>
-        </div>
-        <button data-combo="${co.id}" class="cta-primary bg-plum text-cream px-4 py-2.5 rounded-full text-sm font-semibold inline-flex items-center gap-1.5">
-          Build <i class="ph ph-arrow-right"></i>
-        </button>
-      </div>
-    </div>
-  `).join('');
+  wrap.innerHTML = MENU['combos'].combos.map(co => `<div class="col-span-full bg-strawberry/10 border-2 border-strawberry/40 rounded-2xl p-5"><div class="flex items-start justify-between gap-3 flex-wrap"><div class="flex-1 min-w-[200px]"><div class="font-mono text-[10px] uppercase tracking-[0.18em] text-strawberry mb-1.5 flex items-center gap-1"><i class="ph-fill ph-gift"></i> Combo · save 10%</div><div class="font-display font-extrabold text-xl">${co.name}</div><div class="text-sm text-plum-soft mt-1">Slot 1: pick a ${labelFor(co.a)} · Slot 2: ${co.bNote}</div></div><button data-combo="${co.id}" class="cta-primary bg-plum text-cream px-4 py-2.5 rounded-full text-sm font-semibold inline-flex items-center gap-1.5">Build <i class="ph ph-arrow-right"></i></button></div></div>`).join('');
   wrap.querySelectorAll('[data-combo]').forEach(b => b.addEventListener('click', () => startCombo(b.dataset.combo)));
 }
 
-function labelFor(catId) {
-  if (catId === 'any-drink') return 'drink';
-  return MENU[catId].label.toLowerCase();
-}
+function labelFor(catId) { if (catId === 'any-drink') return 'drink'; return MENU[catId].label.toLowerCase(); }
 
 function startCombo(comboId) {
-  if (isCartFull()) {
-    showToast(`Cart is full (${CART_LIMIT} items max). Remove something to add a combo.`, true);
-    return;
-  }
+  if (isCartFull()) { showToast(`Cart is full (${CART_LIMIT} items max). Remove something to add a combo.`, true); return; }
   const co = MENU['combos'].combos.find(x => x.id === comboId);
   state.combo = co;
   state.comboStep = 1;
@@ -739,13 +622,7 @@ function startCombo(comboId) {
     const banner = document.createElement('div');
     banner.id = 'combo-banner';
     banner.className = 'mb-4 p-4 bg-strawberry/15 border-2 border-strawberry/40 rounded-2xl flex items-center justify-between gap-3 flex-wrap';
-    banner.innerHTML = `
-      <div class="flex items-center gap-2 text-sm">
-        <i class="ph-fill ph-gift text-strawberry text-xl"></i>
-        <span><strong>${co.name}</strong> · ${state.comboItems.length} of 2 drinks added</span>
-      </div>
-      <button id="cancel-combo" class="text-xs font-semibold text-plum-soft hover:text-strawberry">Cancel combo</button>
-    `;
+    banner.innerHTML = `<div class="flex items-center gap-2 text-sm"><i class="ph-fill ph-gift text-strawberry text-xl"></i><span><strong>${co.name}</strong> · ${state.comboItems.length} of 2 drinks added</span></div><button id="cancel-combo" class="text-xs font-semibold text-plum-soft hover:text-strawberry">Cancel combo</button>`;
     bar.parentNode.insertBefore(banner, bar);
     document.getElementById('cancel-combo').addEventListener('click', () => {
       state.combo = null; state.comboStep = 1; state.comboItems = [];
@@ -756,20 +633,14 @@ function startCombo(comboId) {
 }
 
 function addCurrentToCart() {
-  if (isCartFull()) {
-    showToast(`Cart is full (${CART_LIMIT} items max)`, true);
-    document.getElementById('cart-full-banner').classList.remove('hidden');
-    return;
-  }
+  if (isCartFull()) { showToast(`Cart is full (${CART_LIMIT} items max)`, true); document.getElementById('cart-full-banner').classList.remove('hidden'); return; }
   const c = MENU[state.currentCategory];
-  let item, price;
   if (c.isCombo || state.combo) return;
   const size = c.sizes ? c.sizes.find(s => s.id === state.currentSize) : null;
   const milk = c.milkOptions ? c.milkOptions.find(m => m.id === state.currentMilk) : null;
   const addons = c.addons ? c.addons.filter(a => state.currentAddons.has(a.id)) : [];
-  price = (c.fixedPrice ?? size?.price ?? 0) + (milk?.price || 0) + addons.reduce((s,a)=>s+a.price,0);
-
-  item = {
+  const price = (c.fixedPrice ?? size?.price ?? 0) + (milk?.price || 0) + addons.reduce((s,a)=>s+a.price,0);
+  const item = {
     id: Date.now() + '-' + Math.random().toString(36).slice(2,7),
     category: c.label,
     flavor: state.currentFlavor,
@@ -778,7 +649,6 @@ function addCurrentToCart() {
     addons: addons.map(a => a.label),
     price,
   };
-
   if (state.combo) {
     state.comboItems.push(item);
     document.getElementById('combo-banner').querySelector('span').innerHTML = `<strong>${state.combo.name}</strong> · ${state.comboItems.length} of 2 drinks added`;
@@ -793,37 +663,29 @@ function addCurrentToCart() {
       id: Date.now() + '-combo',
       category: 'Combo',
       flavor: state.combo.name,
-      size: null,
-      milk: null,
+      size: null, milk: null,
       addons: [`Slot 1: ${formatLine(a)}`, `Slot 2: ${formatLine(b)} · 10% off`, `+ ${state.combo.bNote}`],
       price: a.price + (b.price * 0.9),
     };
     state.cart.push(comboItem);
     state.combo = null; state.comboItems = []; state.comboStep = 1;
     const banner = document.getElementById('combo-banner'); if (banner) banner.remove();
-    showToast(`Combo added · $${comboItem.price.toFixed(2)}`);
+    showToast(`Combo added · ${comboItem.price.toFixed(2)}`);
     renderCart();
     resetBuilder();
     selectCategory('combos');
     return;
   }
-
   state.cart.push(item);
-  showToast(`${item.flavor} added · $${price.toFixed(2)} · ${state.cart.length}/${CART_LIMIT}`);
+  showToast(`${item.flavor} added · ${price.toFixed(2)} · ${state.cart.length}/${CART_LIMIT}`);
   renderCart();
   resetBuilder();
 }
 
-function formatLine(it) {
-  const bits = [it.flavor, it.size, it.milk, ...(it.addons||[])].filter(Boolean);
-  return bits.join(' · ');
-}
+function formatLine(it) { const bits = [it.flavor, it.size, it.milk, ...(it.addons||[])].filter(Boolean); return bits.join(' · '); }
 
 function resetBuilder() {
-  state.currentFlavor = null;
-  state.currentSize = null;
-  state.currentMilk = 'regular';
-  state.currentAddons = new Set();
+  state.currentFlavor = null; state.currentSize = null; state.currentMilk = 'regular'; state.currentAddons = new Set();
   document.querySelectorAll('.drink-card,.size-tile,.add-chip').forEach(el => el.classList.remove('selected'));
   document.getElementById('add-to-cart-bar').classList.add('hidden');
 }
@@ -836,48 +698,23 @@ function updateBuildSummary() {
   const addons = c.addons ? c.addons.filter(a => state.currentAddons.has(a.id)) : [];
   const base = c.fixedPrice ?? size?.price ?? 0;
   const total = base + (milk?.price || 0) + addons.reduce((s,a)=>s+a.price,0);
-
   const ready = (c.fixedPrice !== undefined) ? !!state.currentFlavor : (state.currentFlavor && state.currentSize);
   document.getElementById('add-to-cart-bar').classList.toggle('hidden', !ready);
-
   const summary = [state.currentFlavor, size?.label, milk && milk.id!=='regular' ? milk.label : null, ...addons.map(a=>a.label)].filter(Boolean).join(' · ');
   document.getElementById('build-summary').textContent = summary || '—';
-  document.getElementById('build-price').textContent = `$${total.toFixed(2)}`;
+  document.getElementById('build-price').textContent = `${total.toFixed(2)}`;
 }
 
-// ============ CART LIMIT UI ============
 function refreshCartLimitUI() {
   const full = isCartFull();
-  // Count badges: show "n/10"
   const countTxt = `${state.cart.length}/${CART_LIMIT}`;
   document.getElementById('cart-count').textContent = countTxt;
   document.getElementById('cart-count-mobile').textContent = String(state.cart.length);
-  const m = document.getElementById('mobile-cart-count');
-  if (m) m.textContent = countTxt;
-
-  // Highlight count badge when full
-  const badges = ['cart-count','mobile-cart-count'];
-  badges.forEach(id => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.classList.toggle('bg-strawberry', !full);
-    el.classList.toggle('text-plum', !full);
-    el.classList.toggle('bg-gold', full);
-    el.classList.toggle('text-plum', full);
-  });
-
-  // Inline hint inside the add-to-cart bar (only relevant while building)
+  const m = document.getElementById('mobile-cart-count'); if (m) m.textContent = countTxt;
   document.getElementById('cart-full-hint').classList.toggle('hidden', !full);
-
-  // Full-state banner on the cart itself
   document.getElementById('cart-full-banner').classList.toggle('hidden', !full);
   document.getElementById('mobile-cart-full-banner').classList.toggle('hidden', !full);
-
-  // Add-to-cart button disabled when full
-  const addBtn = document.getElementById('add-to-cart-btn');
-  if (addBtn) addBtn.disabled = full;
-
-  // Pulse the count badge briefly when full hits
+  const addBtn = document.getElementById('add-to-cart-btn'); if (addBtn) addBtn.disabled = full;
   if (full) {
     const el = document.getElementById('cart-count');
     el.classList.add('cart-full-pulse');
@@ -885,65 +722,32 @@ function refreshCartLimitUI() {
   }
 }
 
-// ============ CART ============
 function renderCart() {
   const wrap = document.getElementById('cart-items');
   const mobWrap = document.getElementById('mobile-cart-items');
   const empty = document.getElementById('cart-empty');
   const footer = document.getElementById('cart-footer');
   const mobFooter = document.getElementById('mobile-cart-footer');
-
   const count = state.cart.length;
-
   if (count === 0) {
-    empty.classList.remove('hidden');
-    wrap.classList.add('hidden');
-    footer.classList.add('hidden');
-    mobFooter.classList.add('hidden');
-    refreshCartLimitUI();
-    return;
+    empty.classList.remove('hidden'); wrap.classList.add('hidden'); footer.classList.add('hidden'); mobFooter.classList.add('hidden');
+    refreshCartLimitUI(); return;
   }
-  empty.classList.add('hidden');
-  wrap.classList.remove('hidden');
-  footer.classList.remove('hidden');
-  mobFooter.classList.remove('hidden');
-
+  empty.classList.add('hidden'); wrap.classList.remove('hidden'); footer.classList.remove('hidden'); mobFooter.classList.remove('hidden');
   const subtotal = state.cart.reduce((s,i)=>s+i.price, 0);
   const tax = subtotal * TAX_RATE;
   const total = subtotal + tax;
-  document.getElementById('cart-subtotal').textContent = `$${subtotal.toFixed(2)}`;
-  document.getElementById('cart-tax').textContent = `$${tax.toFixed(2)}`;
-  document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
-  document.getElementById('mobile-cart-total').textContent = `$${total.toFixed(2)}`;
-
-  const html = state.cart.map(it => `
-    <div class="p-5 border-b border-cream/10 last:border-0">
-      <div class="flex items-start justify-between gap-3 mb-1.5">
-        <div class="font-display font-bold text-base leading-tight">${it.flavor}</div>
-        <button data-remove="${it.id}" class="text-cream/50 hover:text-strawberry shrink-0" aria-label="Remove"><i class="ph ph-trash"></i></button>
-      </div>
-      <div class="font-mono text-[10px] uppercase tracking-[0.16em] text-cream/50 mb-2">${it.category}${it.size?` · ${it.size}`:''}${it.milk?` · ${it.milk}`:''}</div>
-      ${it.addons && it.addons.length ? `<ul class="text-xs text-cream/70 space-y-0.5 mb-2">${it.addons.map(a=>`<li>· ${a}</li>`).join('')}</ul>` : ''}
-      <div class="font-display font-extrabold text-lg">$${it.price.toFixed(2)}</div>
-    </div>
-  `).join('');
-
-  wrap.innerHTML = html;
-  mobWrap.innerHTML = html;
-
-  wrap.querySelectorAll('[data-remove]').forEach(b => b.addEventListener('click', () => {
-    state.cart = state.cart.filter(i => i.id !== b.dataset.remove);
-    renderCart();
-  }));
-  mobWrap.querySelectorAll('[data-remove]').forEach(b => b.addEventListener('click', () => {
-    state.cart = state.cart.filter(i => i.id !== b.dataset.remove);
-    renderCart();
-  }));
-
+  document.getElementById('cart-subtotal').textContent = `${subtotal.toFixed(2)}`;
+  document.getElementById('cart-tax').textContent = `${tax.toFixed(2)}`;
+  document.getElementById('cart-total').textContent = `${total.toFixed(2)}`;
+  document.getElementById('mobile-cart-total').textContent = `${total.toFixed(2)}`;
+  const html = state.cart.map(it => `<div class="p-5 border-b border-cream/10 last:border-0"><div class="flex items-start justify-between gap-3 mb-1.5"><div class="font-display font-bold text-base leading-tight">${it.flavor}</div><button data-remove="${it.id}" class="text-cream/50 hover:text-strawberry shrink-0" aria-label="Remove"><i class="ph ph-trash"></i></button></div><div class="font-mono text-[10px] uppercase tracking-[0.16em] text-cream/50 mb-2">${it.category}${it.size?` · ${it.size}`:''}${it.milk?` · ${it.milk}`:''}</div>${it.addons && it.addons.length ? `<ul class="text-xs text-cream/70 space-y-0.5 mb-2">${it.addons.map(a=>`<li>· ${a}</li>`).join('')}</ul>` : ''}<div class="font-display font-extrabold text-lg">${it.price.toFixed(2)}</div></div>`).join('');
+  wrap.innerHTML = html; mobWrap.innerHTML = html;
+  wrap.querySelectorAll('[data-remove]').forEach(b => b.addEventListener('click', () => { state.cart = state.cart.filter(i => i.id !== b.dataset.remove); renderCart(); }));
+  mobWrap.querySelectorAll('[data-remove]').forEach(b => b.addEventListener('click', () => { state.cart = state.cart.filter(i => i.id !== b.dataset.remove); renderCart(); }));
   refreshCartLimitUI();
 }
 
-// ============ SUBMIT → INSTAGRAM DM ============
 function submitOrder() {
   if (state.cart.length === 0) return;
   const name = document.getElementById('cust-name').value.trim();
@@ -951,47 +755,31 @@ function submitOrder() {
   const time = document.getElementById('cust-time').value;
   const email = document.getElementById('cust-email').value.trim();
   const notes = document.getElementById('cust-notes').value.trim();
-
-  if (!name || !phone || !time) {
-    showToast('Fill in name, phone & pickup time', true);
-    document.getElementById('step-3').scrollIntoView({behavior:'smooth'});
-    return;
-  }
-
+  if (!name || !phone || !time) { showToast('Fill in name, phone & pickup time', true); document.getElementById('step-3').scrollIntoView({behavior:'smooth'}); return; }
   const subtotal = state.cart.reduce((s,i)=>s+i.price, 0);
   const tax = subtotal * TAX_RATE;
   const total = subtotal + tax;
-
   let msg = `Hi! I'd like to place a pickup order:\n\n`;
   state.cart.forEach((it, i) => {
     msg += `${i+1}. ${it.flavor}`;
     if (it.size) msg += ` (${it.size})`;
     if (it.milk) msg += ` · ${it.milk}`;
-    msg += ` — $${it.price.toFixed(2)}\n`;
+    msg += ` — ${it.price.toFixed(2)}\n`;
     (it.addons||[]).forEach(a => msg += `   + ${a}\n`);
   });
-  msg += `\nSubtotal: $${subtotal.toFixed(2)}\nTax (est.): $${tax.toFixed(2)}\nTotal: $${total.toFixed(2)}\n\n`;
+  msg += `\nSubtotal: ${subtotal.toFixed(2)}\nTax (est.): ${tax.toFixed(2)}\nTotal: ${total.toFixed(2)}\n\n`;
   msg += `Name: ${name}\nPhone: ${phone}\nPickup: ${time}\n`;
   if (email) msg += `Email: ${email}\n`;
   if (notes) msg += `Notes: ${notes}\n`;
   msg += `\nThanks! 🙏`;
-
   const url = `https://ig.me/m/${SHOP_INFO.ig}?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank');
   showToast('Opening Instagram…');
 }
 
-// ============ MOBILE CART ============
-function openMobileCart() {
-  document.getElementById('mobile-cart-overlay').classList.remove('hidden');
-  document.getElementById('mobile-cart-sheet').classList.remove('hidden');
-}
-function closeMobileCart() {
-  document.getElementById('mobile-cart-overlay').classList.add('hidden');
-  document.getElementById('mobile-cart-sheet').classList.add('hidden');
-}
+function openMobileCart() { document.getElementById('mobile-cart-overlay').classList.remove('hidden'); document.getElementById('mobile-cart-sheet').classList.remove('hidden'); }
+function closeMobileCart() { document.getElementById('mobile-cart-overlay').classList.add('hidden'); document.getElementById('mobile-cart-sheet').classList.add('hidden'); }
 
-// ============ TOAST ============
 let toastTimer;
 function showToast(msg, isError) {
   const t = document.getElementById('toast');
@@ -1002,14 +790,12 @@ function showToast(msg, isError) {
   toastTimer = setTimeout(() => t.classList.add('hidden'), 2200);
 }
 
-// ============ PICKUP TIME OPTIONS ============
 function populatePickupTimes() {
   const sel = document.getElementById('cust-time');
   const now = new Date();
   const day = now.getDay();
   const h = now.getHours() + now.getMinutes()/60;
   const todayHours = HOURS[day];
-  let startH = (todayHours && h < todayHours.close) ? Math.max(todayHours.open, Math.ceil(h/0.25)*0.25 + 0.25) : (todayHours ? todayHours.open + 24 : null);
   const slots = [];
   for (let i = 0; i < 96; i++) {
     const t = new Date(now.getTime() + i * 15 * 60000);
@@ -1017,9 +803,7 @@ function populatePickupTimes() {
     const dh = HOURS[d];
     if (!dh) continue;
     const th = t.getHours() + t.getMinutes()/60;
-    if (th >= dh.open && th < dh.close) {
-      slots.push(t);
-    }
+    if (th >= dh.open && th < dh.close) slots.push(t);
     if (slots.length >= 16) break;
   }
   sel.innerHTML = `<option value="">Pick a time…</option>` + slots.map(t => {
@@ -1029,13 +813,11 @@ function populatePickupTimes() {
   }).join('');
 }
 
-// ============ INIT ============
 document.addEventListener('DOMContentLoaded', () => {
   renderCategories();
   updateStatusBanner();
   renderCart();
   populatePickupTimes();
-
   document.getElementById('drink-search').addEventListener('input', e => {
     state.search = e.target.value;
     if (state.currentCategory && !MENU[state.currentCategory].isCombo) renderDrinks(MENU[state.currentCategory]);
@@ -1051,7 +833,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('open-cart-mobile').addEventListener('click', openMobileCart);
   document.getElementById('close-cart-mobile').addEventListener('click', closeMobileCart);
   document.getElementById('mobile-cart-overlay').addEventListener('click', closeMobileCart);
-
   setInterval(() => { updateStatusBanner(); populatePickupTimes(); }, 60000);
 });
 </script>
