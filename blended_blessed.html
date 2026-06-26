@@ -1,11 +1,9 @@
-Code (html)
-html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-Blended & Blessed — Smoothie & Tea Bar · Montgomery, TX
+<title>Blended & Blessed — Smoothie & Tea Bar · Montgomery, TX</title>
 <meta name="description" content="Loaded teas, protein smoothies, 3-in-1 specialties, and protein coffee — handcrafted daily at Blended & Blessed in Montgomery, TX. Order pickup on Instagram DM." />
 <meta property="og:title" content="Blended & Blessed — Smoothie & Tea Bar" />
 <meta property="og:description" content="Loaded teas. Protein smoothies. Blessed vibes. Order pickup today." />
@@ -68,8 +66,10 @@ tailwind.config = {
   *:focus-visible { outline: 2.5px solid #FF4E78; outline-offset: 3px; border-radius: 4px; }
   section[id] { scroll-margin-top: 70px; }
   .corner-mark { position: absolute; top: 1rem; right: 1rem; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 700; }
+  .pulse-dot { animation: pulse 1.8s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.4); opacity: .6; } }
   @media (prefers-reduced-motion: reduce) {
-    .marquee-track, .reveal, .sparkle { animation: none !important; opacity: 1 !important; transform: none !important; }
+    .marquee-track, .reveal, .sparkle, .pulse-dot { animation: none !important; opacity: 1 !important; transform: none !important; }
   }
 </style>
 </head>
@@ -82,7 +82,7 @@ tailwind.config = {
     <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 h-16 flex items-center justify-between gap-3">
       <a href="#top" class="flex items-center gap-2.5 shrink-0">
         <span class="w-9 h-9 rounded-full bg-lavender flex items-center justify-center font-display font-extrabold text-plum text-lg">B</span>
-        <span class="font-display font-bold text-base sm:text-lg tracking-tight whitespace-nowrap">Blended &amp; Blessed</span>
+        <span class="font-display font-bold text-base sm:text-lg tracking-tight whitespace-nowrap">Blended & Blessed</span>
       </a>
       <div class="flex items-center gap-1 sm:gap-3 md:gap-5">
         <a href="#menu" class="hidden md:inline text-sm font-medium hover:text-strawberry transition-colors px-2 py-1">Menu</a>
@@ -95,6 +95,32 @@ tailwind.config = {
     </div>
   </nav>
 
+  <!-- STATUS BANNER (NEW v4: hours-aware, identical logic to order.html) -->
+  <div id="status-banner" class="border-b border-plum/10">
+    <div id="status-open" class="hidden bg-lavender-soft">
+      <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 py-3 flex items-center justify-between gap-3 flex-wrap">
+        <div class="flex items-center gap-2.5">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 pulse-dot"></span>
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-plum font-semibold">Open now</span>
+          <span class="text-plum-soft text-sm">Ready for pickup in ~15 min</span>
+        </div>
+        <div class="font-mono text-[10px] uppercase tracking-[0.16em] text-plum-soft">18417 Highway 105 W, Ste 5 · (936) 314-0685</div>
+      </div>
+    </div>
+    <div id="status-closed" class="hidden">
+      <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 py-3.5 flex items-center justify-between gap-3 flex-wrap">
+        <div class="flex items-center gap-2.5">
+          <i class="ph-fill ph-clock-countdown text-strawberry text-xl"></i>
+          <div>
+            <div class="font-mono text-[11px] uppercase tracking-[0.18em] text-strawberry font-bold">Currently closed</div>
+            <div class="text-plum text-sm" id="closed-message">Opens later today</div>
+          </div>
+        </div>
+        <div class="font-mono text-[10px] uppercase tracking-[0.16em] text-plum-soft">Order ahead — we'll confirm when we open</div>
+      </div>
+    </div>
+  </div>
+
   <main id="main">
 
     <!-- HERO -->
@@ -104,9 +130,10 @@ tailwind.config = {
 
       <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center relative">
         <div class="lg:col-span-7 relative z-10">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="inline-block w-2 h-2 rounded-full bg-strawberry animate-pulse"></span>
-            <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-plum-soft">Open Today · Loaded Teas · Smoothies · 3-in-1</span>
+          <!-- HERO PILL (NEW v4: hours-aware, swaps text + dot color) -->
+          <div id="hero-pill" class="flex items-center gap-3 mb-6 transition-colors">
+            <span id="hero-pill-dot" class="inline-block w-2 h-2 rounded-full bg-strawberry animate-pulse"></span>
+            <span id="hero-pill-text" class="font-mono text-[11px] uppercase tracking-[0.18em] text-plum-soft">Open Today · Loaded Teas · Smoothies · 3-in-1</span>
           </div>
 
           <h1 class="font-display font-extrabold text-[clamp(2.75rem,7.2vw,6rem)] leading-[0.92] tracking-ultra mb-7">
@@ -128,7 +155,7 @@ tailwind.config = {
           </div>
         </div>
 
-        <!-- LOGO RECREATION (SVG) — swap for <img src="logo.svg" alt="Blended & Blessed" class="w-full h-auto"> when you have the real file -->
+        <!-- LOGO RECREATION (SVG) -->
         <div class="lg:col-span-5 relative">
           <div class="relative max-w-[460px] mx-auto aspect-[2/1]">
             <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full" role="img" aria-label="Blended & Blessed logo">
@@ -140,7 +167,6 @@ tailwind.config = {
               <circle cx="200" cy="15" r="3" fill="#B8A6E8" opacity="0.5" aria-hidden="true"/>
               <circle cx="15" cy="100" r="3" fill="#B8A6E8" opacity="0.5" aria-hidden="true"/>
               <circle cx="385" cy="100" r="4" fill="#B8A6E8" opacity="0.6" aria-hidden="true"/>
-
               <g transform="translate(55, 25)" aria-hidden="true">
                 <path d="M10 25 L100 25 L95 135 Q95 145 85 145 L25 145 Q15 145 15 135 Z" fill="#FFE4ED" stroke="#2A1245" stroke-width="3.5" stroke-linejoin="round"/>
                 <path d="M15 55 L95 55 L90 135 Q90 143 82 143 L28 143 Q20 143 20 135 Z" fill="#FF4E78"/>
@@ -148,7 +174,6 @@ tailwind.config = {
                 <path d="M40 25 Q45 18 50 25" fill="none" stroke="#2A1245" stroke-width="2" stroke-linecap="round"/>
                 <path d="M60 25 Q65 18 70 25" fill="none" stroke="#2A1245" stroke-width="2" stroke-linecap="round"/>
               </g>
-
               <g transform="translate(235, 25)" aria-hidden="true">
                 <path d="M10 25 L100 25 L95 135 Q95 145 85 145 L25 145 Q15 145 15 135 Z" fill="#FFE9DD" stroke="#2A1245" stroke-width="3.5" stroke-linejoin="round"/>
                 <path d="M15 55 L95 55 L90 135 Q90 143 82 143 L28 143 Q20 143 20 135 Z" fill="#FF6B3D"/>
@@ -156,10 +181,8 @@ tailwind.config = {
                 <rect x="50" y="80" width="12" height="12" fill="#FFFFFF" opacity="0.65" rx="1"/>
                 <rect x="68" y="68" width="13" height="13" fill="#FFFFFF" opacity="0.65" rx="1"/>
                 <rect x="38" y="95" width="11" height="11" fill="#FFFFFF" opacity="0.65" rx="1"/>
-                <!-- Single clean straw stroke (was 2 overlapping lines) -->
                 <line x1="60" y1="5" x2="80" y2="65" stroke="#FF4E78" stroke-width="6" stroke-linecap="round"/>
               </g>
-
               <g transform="translate(40, 158)" aria-hidden="true">
                 <path d="M5 8 Q15 -2 25 8 L25 22 Q15 32 5 22 Z" fill="#FF4E78" stroke="#2A1245" stroke-width="2.5" stroke-linejoin="round"/>
                 <path d="M2 8 L28 8 L24 2 L20 6 L16 1 L12 6 L8 1 L4 6 Z" fill="#5DAE3A" stroke="#2A1245" stroke-width="2" stroke-linejoin="round"/>
@@ -167,7 +190,6 @@ tailwind.config = {
                 <circle cx="18" cy="20" r="1" fill="#FFE4ED"/>
                 <circle cx="15" cy="24" r="1" fill="#FFE4ED"/>
               </g>
-
               <g transform="translate(335, 145)" aria-hidden="true">
                 <rect x="13" y="0" width="7" height="42" fill="#F2C14E" stroke="#2A1245" stroke-width="2.5" stroke-linejoin="round"/>
                 <rect x="0" y="13" width="33" height="7" fill="#F2C14E" stroke="#2A1245" stroke-width="2.5" stroke-linejoin="round"/>
@@ -222,7 +244,6 @@ tailwind.config = {
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-6 auto-rows-[minmax(180px,auto)] gap-4 md:gap-6">
-
           <article class="menu-card relative col-span-2 md:col-span-3 row-span-2 bg-lavender rounded-3xl p-7 md:p-10 overflow-hidden">
             <span class="corner-mark bg-plum text-cream">★</span>
             <div class="font-mono text-[11px] uppercase tracking-[0.18em] text-plum/70 mb-3">Loaded Tea · Bestseller</div>
@@ -234,7 +255,7 @@ tailwind.config = {
 
           <article class="menu-card relative col-span-2 md:col-span-3 bg-strawberry text-cream rounded-3xl p-6 md:p-8 overflow-hidden">
             <div class="font-mono text-[11px] uppercase tracking-[0.18em] opacity-80 mb-3">Protein Smoothie</div>
-            <h3 class="font-display font-extrabold text-3xl md:text-4xl tracking-ultra leading-[0.92]">Cookies<br>&amp; Cream</h3>
+            <h3 class="font-display font-extrabold text-3xl md:text-4xl tracking-ultra leading-[0.92]">Cookies<br>& Cream</h3>
             <div class="font-mono text-sm font-bold mt-5">From $7.50</div>
             <div aria-hidden="true" class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-cream/20 blur-2xl"></div>
           </article>
@@ -266,11 +287,10 @@ tailwind.config = {
             <div>
               <div class="font-display font-extrabold text-2xl md:text-3xl tracking-ultra leading-[0.95] mb-2">See the full<br>menu</div>
               <div class="font-semibold inline-flex items-center gap-1.5 text-strawberry group-hover:gap-3 transition-all">
-                Browse all teas, smoothies &amp; coffee <i class="ph ph-arrow-right"></i>
+                Browse all teas, smoothies & coffee <i class="ph ph-arrow-right"></i>
               </div>
             </div>
           </a>
-
         </div>
       </div>
     </section>
@@ -289,7 +309,6 @@ tailwind.config = {
           </h2>
           <p class="text-plum-soft mt-6 text-lg max-w-md">Three things we don't compromise on — no matter what's trending.</p>
         </div>
-
         <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4 md:gap-6">
           <div class="bg-cream/70 backdrop-blur-sm rounded-2xl p-7 border border-plum/10">
             <div class="w-12 h-12 rounded-full bg-strawberry text-cream flex items-center justify-center font-display font-extrabold text-xl mb-5">01</div>
@@ -333,14 +352,14 @@ tailwind.config = {
           </div>
           <div class="bg-cream-warm rounded-3xl p-8 border border-plum/5 hover:border-lavender-deep/60 transition-colors">
             <div class="font-display font-extrabold text-7xl text-lavender-deep leading-none mb-4">3</div>
-            <h3 class="font-display font-bold text-2xl mb-2">Swing by &amp; sip</h3>
+            <h3 class="font-display font-bold text-2xl mb-2">Swing by & sip</h3>
             <p class="text-plum-soft leading-relaxed">Pickup ready in about five minutes. Walk in, grab, go.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- INSTAGRAM -->
+    <!-- INSTAGRAM (NEW v4: 6 embed slots with clear placeholders) -->
     <section id="feed" class="py-24 lg:py-32 px-5 sm:px-8 lg:px-10 bg-strawberry text-plum relative overflow-hidden">
       <div aria-hidden="true" class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-tangerine/40 blur-3xl"></div>
       <div aria-hidden="true" class="absolute bottom-0 left-10 flex gap-3 pointer-events-none">
@@ -365,12 +384,17 @@ tailwind.config = {
         </div>
 
         <div class="lg:col-span-5 grid grid-cols-3 gap-3">
-          <div class="aspect-square bg-lavender rounded-2xl"></div>
-          <div class="aspect-square bg-plum rounded-2xl"></div>
-          <div class="aspect-square bg-tangerine rounded-2xl"></div>
-          <div class="aspect-square bg-tangerine rounded-2xl"></div>
-          <div class="aspect-square bg-lavender rounded-2xl"></div>
-          <div class="aspect-square bg-plum rounded-2xl"></div>
+          <!--
+            REPLACE these 6 placeholders with real Instagram embed <blockquote> tags.
+            To get one: open a post on instagram.com → click the ••• → "Embed" → copy the blockquote.
+            Set the iframe max-width to 100% in your CSS, or wrap in a div with overflow:hidden + aspect-square.
+          -->
+          <div class="aspect-square bg-lavender rounded-2xl flex items-center justify-center text-center p-2"><span class="font-mono text-[9px] text-plum font-bold uppercase tracking-wider">IG post 1</span></div>
+          <div class="aspect-square bg-plum rounded-2xl flex items-center justify-center text-center p-2"><span class="font-mono text-[9px] text-cream font-bold uppercase tracking-wider">IG post 2</span></div>
+          <div class="aspect-square bg-tangerine rounded-2xl flex items-center justify-center text-center p-2"><span class="font-mono text-[9px] text-plum font-bold uppercase tracking-wider">IG post 3</span></div>
+          <div class="aspect-square bg-tangerine rounded-2xl flex items-center justify-center text-center p-2"><span class="font-mono text-[9px] text-plum font-bold uppercase tracking-wider">IG post 4</span></div>
+          <div class="aspect-square bg-lavender rounded-2xl flex items-center justify-center text-center p-2"><span class="font-mono text-[9px] text-plum font-bold uppercase tracking-wider">IG post 5</span></div>
+          <div class="aspect-square bg-plum rounded-2xl flex items-center justify-center text-center p-2"><span class="font-mono text-[9px] text-cream font-bold uppercase tracking-wider">IG post 6</span></div>
         </div>
       </div>
     </section>
@@ -378,14 +402,12 @@ tailwind.config = {
     <!-- ORDER + LOCATION -->
     <section id="order" class="py-24 lg:py-32 px-5 sm:px-8 lg:px-10 bg-cream">
       <div class="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12">
-
         <div>
-          <div class="font-mono text-xs uppercase tracking-[0.2em] text-strawberry mb-3">// Order &amp; pickup</div>
+          <div class="font-mono text-xs uppercase tracking-[0.2em] text-strawberry mb-3">// Order & pickup</div>
           <h2 class="font-display font-extrabold text-5xl md:text-6xl tracking-ultra leading-[0.92] mb-6">
             Ready when<br>you are.
           </h2>
           <p class="text-plum-soft text-lg mb-10 max-w-md">Two easy ways to order. We'll have it ready before you walk in.</p>
-
           <div class="space-y-4">
             <a href="https://www.instagram.com/blendedandblessedproteinbar/" target="_blank" rel="noopener" class="cta-primary flex items-center gap-5 p-6 bg-plum text-cream rounded-2xl hover:bg-strawberry hover:text-plum transition-colors">
               <div class="w-12 h-12 rounded-full bg-cream text-plum flex items-center justify-center shrink-0">
@@ -397,7 +419,6 @@ tailwind.config = {
               </div>
               <i class="ph ph-arrow-right text-xl"></i>
             </a>
-
             <a href="tel:+19363140685" class="cta-primary flex items-center gap-5 p-6 bg-cream-warm border border-plum/10 rounded-2xl hover:border-plum hover:bg-cream transition-colors">
               <div class="w-12 h-12 rounded-full bg-plum text-cream flex items-center justify-center shrink-0">
                 <i class="ph ph-phone text-2xl"></i>
@@ -410,7 +431,6 @@ tailwind.config = {
             </a>
           </div>
         </div>
-
         <div class="bg-plum text-cream rounded-3xl p-8 md:p-10 relative overflow-hidden">
           <div aria-hidden="true" class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-lavender/30 blur-3xl"></div>
           <div aria-hidden="true" class="absolute -bottom-10 -left-10 flex gap-2 pointer-events-none opacity-60">
@@ -426,7 +446,6 @@ tailwind.config = {
             <h3 class="font-display font-extrabold text-4xl tracking-ultra leading-[0.95] mb-8">
               One bar.<br>One neighborhood.
             </h3>
-
             <div class="space-y-6">
               <div>
                 <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-cream/55 mb-1.5 flex items-center gap-1.5"><i class="ph ph-map-pin"></i> Address</div>
@@ -444,16 +463,13 @@ tailwind.config = {
                 <div class="font-display font-bold text-lg">(936) 314-0685</div>
               </div>
             </div>
-
             <a href="https://www.google.com/maps/search/?api=1&query=18417+Highway+105+W+Suite+5+Montgomery+TX+77356" target="_blank" rel="noopener" aria-label="Get directions on Google Maps" class="mt-8 inline-flex items-center gap-2 border border-cream/30 rounded-full px-5 py-3 text-sm font-semibold hover:bg-cream hover:text-plum transition-colors">
               Get directions <i class="ph ph-arrow-up-right text-base"></i>
             </a>
           </div>
         </div>
-
       </div>
     </section>
-
   </main>
 
   <!-- FOOTER -->
@@ -462,8 +478,8 @@ tailwind.config = {
       <div class="flex items-center gap-3">
         <span class="w-9 h-9 rounded-full bg-lavender flex items-center justify-center font-display font-extrabold text-plum text-lg">B</span>
         <div>
-          <div class="font-display font-bold text-base">Blended &amp; Blessed</div>
-          <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-cream/50">Smoothie &amp; Tea Bar · Montgomery, TX</div>
+          <div class="font-display font-bold text-base">Blended & Blessed</div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.18em] text-cream/50">Smoothie & Tea Bar · Montgomery, TX</div>
         </div>
       </div>
       <div class="flex items-center gap-5 sm:gap-7 text-sm">
@@ -476,21 +492,111 @@ tailwind.config = {
   </footer>
 
   <script>
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
-    document.querySelectorAll('section, .menu-card, article').forEach(el => { el.classList.add('reveal'); obs.observe(el); });
+    // ============ HOURS (must match order.html exactly) ============
+    const HOURS = {
+      1: { open: 7,  close: 19 },
+      2: { open: 7,  close: 19 },
+      3: { open: 7,  close: 19 },
+      4: { open: 7,  close: 19 },
+      5: { open: 7,  close: 19 },
+      6: { open: 10, close: 16 },
+      0: null,
+    };
 
-    document.querySelectorAll('.cta-primary').forEach(btn => {
-      btn.addEventListener('pointermove', (e) => {
-        const r = btn.getBoundingClientRect();
-        const x = e.clientX - r.left - r.width / 2;
-        const y = e.clientY - r.top - r.height / 2;
-        btn.style.transform = `translate(${x * 0.12}px, ${y * 0.18 - 2}px)`;
+    function formatTime(h) {
+      const hr = Math.floor(h);
+      const min = Math.round((h - hr) * 60);
+      const ampm = hr >= 12 ? 'PM' : 'AM';
+      const h12 = hr % 12 || 12;
+      return min ? `${h12}:${String(min).padStart(2,'0')} ${ampm}` : `${h12}:00 ${ampm}`;
+    }
+
+    function getOpenState() {
+      const now = new Date();
+      const day = now.getDay();
+      const h = now.getHours() + now.getMinutes()/60;
+      const todayHours = HOURS[day];
+      const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
+      if (todayHours === null) {
+        return { isOpen: false, message: 'Opens Monday at 7:00 AM' };
+      }
+      if (h >= todayHours.open && h < todayHours.close) {
+        return { isOpen: true, message: null };
+      }
+      if (h < todayHours.open) {
+        return { isOpen: false, message: `Opens today at ${formatTime(todayHours.open)}` };
+      }
+      for (let i = 1; i <= 7; i++) {
+        const next = (day + i) % 7;
+        if (HOURS[next] !== null) {
+          const isTomorrow = i === 1;
+          return {
+            isOpen: false,
+            message: isTomorrow
+              ? `Opens tomorrow at ${formatTime(HOURS[next].open)}`
+              : `Opens ${dayNames[next]} at ${formatTime(HOURS[next].open)}`,
+          };
+        }
+      }
+      return { isOpen: false, message: 'Opens Monday at 7:00 AM' };
+    }
+
+    // ============ STATUS BANNER ============
+    function updateStatusBanner() {
+      const { isOpen, message } = getOpenState();
+      const openEl = document.getElementById('status-open');
+      const closedEl = document.getElementById('status-closed');
+      if (openEl) openEl.classList.toggle('hidden', !isOpen);
+      if (closedEl) closedEl.classList.toggle('hidden', isOpen);
+      if (!isOpen && message) {
+        const m = document.getElementById('closed-message');
+        if (m) m.textContent = message;
+      }
+    }
+
+    // ============ HERO PILL (NEW v4) ============
+    function updateHeroPill() {
+      const { isOpen, message } = getOpenState();
+      const textEl = document.getElementById('hero-pill-text');
+      const dotEl = document.getElementById('hero-pill-dot');
+      if (!textEl || !dotEl) return;
+
+      if (isOpen) {
+        textEl.textContent = 'Open now · Loaded Teas · Smoothies · 3-in-1';
+        dotEl.className = 'inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse';
+      } else {
+        textEl.textContent = `Closed · ${message} · Order ahead on the next page`;
+        dotEl.className = 'inline-block w-2 h-2 rounded-full bg-strawberry animate-pulse';
+      }
+    }
+
+    // ============ INIT ============
+    document.addEventListener('DOMContentLoaded', () => {
+      updateStatusBanner();
+      updateHeroPill();
+
+      // Reveal animations
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+      document.querySelectorAll('section, .menu-card, article').forEach(el => { el.classList.add('reveal'); obs.observe(el); });
+
+      // Magnetic CTAs
+      document.querySelectorAll('.cta-primary').forEach(btn => {
+        btn.addEventListener('pointermove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const x = e.clientX - r.left - r.width / 2;
+          const y = e.clientY - r.top - r.height / 2;
+          btn.style.transform = `translate(${x * 0.12}px, ${y * 0.18 - 2}px)`;
+        });
+        btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
       });
-      btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
+
+      // Refresh open/closed state every minute
+      setInterval(() => { updateStatusBanner(); updateHeroPill(); }, 60000);
     });
   </script>
 </body>
