@@ -2,6 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  document.body.classList.add('js-ready');
+
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
   const siteNav = document.getElementById('siteNav');
@@ -32,24 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach((el) => observer.observe(el));
   } else {
     revealEls.forEach((el) => el.classList.add('in-view'));
-  }
-
-  // Houston ground-control clock
-  const timeEl = document.getElementById('localTime');
-  if (timeEl) {
-    const updateClock = () => {
-      const now = new Date();
-      const formatted = new Intl.DateTimeFormat('en-US', {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false,
-        timeZone: 'America/Chicago',
-      }).format(now);
-      timeEl.textContent = formatted;
-    };
-    updateClock();
-    setInterval(updateClock, 1000);
   }
 
 });
