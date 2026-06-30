@@ -6,68 +6,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./assets/css/styles.css">
 <script defer src="./assets/js/button_script.js"></script>
 <title>Enzo Sperduti's Portfolio</title>
 </head>
 <body>
 
-<div class="scanlines" aria-hidden="true"></div>
-
 <header class="site-header">
-  <a class="brand" href="#top">
-    <span class="brand-mark">EN_</span><span class="brand-name">SPERDUTI</span>
-  </a>
+  <a class="brand" href="#top">Enzo Sperduti</a>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <nav id="siteNav">
     <ul>
-      <li><a href="#about-me"><span class="idx">01</span> About</a></li>
-      <li><a href="#work"><span class="idx">02</span> Work</a></li>
-      <li><a href="#contact-me"><span class="idx">03</span> Contact</a></li>
+      <li><a href="#about-me">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact-me">Contact</a></li>
     </ul>
   </nav>
 </header>
 
 <section id="top" class="hero">
   <div class="hero-bg" style="background-image:url('./assets/images/hero.jpg');"></div>
-  <div class="hero-vignette"></div>
-  <div class="starfield" aria-hidden="true"></div>
+  <div class="hero-gradient"></div>
 
-  <div class="hero-content hud-frame">
-    <span class="corner tl"></span><span class="corner tr"></span>
-    <span class="corner bl"></span><span class="corner br"></span>
-
-    <p id="hero-hello" class="telemetry reveal" style="--d:0">// TRANSMISSION ORIGIN: HOUSTON, TX</p>
-
+  <div class="hero-content">
+    <p id="hero-hello" class="eyebrow reveal" style="--d:0">Portfolio — Houston, TX</p>
     <div class="hero-name reveal" style="--d:1">
-      <h1>ENZO<br>SPERDUTI</h1>
+      <h1>Enzo Sperduti</h1>
     </div>
-
-    <div class="status-row reveal" style="--d:2">
-      <span class="chip"><i class="dot dot-amber"></i>WEB DEV — IN TRAINING</span>
-      <span class="chip"><i class="dot dot-cyan"></i>GAME DEV — 4 TITLES SHIPPED</span>
-    </div>
-
+    <p id="hero-about" class="hero-tagline reveal" style="--d:2">Web developer in training. Lifelong game maker.</p>
     <a href="#about-me" class="scroll-cue reveal" style="--d:3" aria-label="Scroll to about section">
-      <span>SCROLL</span>
-      <svg width="14" height="20" viewBox="0 0 14 20"><path d="M7 0 L7 18 M1 12 L7 18 L13 12" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+      <span></span>
     </a>
   </div>
 </section>
 
+<div class="ridge-divider" aria-hidden="true">
+  <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+    <path d="M0,45 C120,15 240,65 380,38 C520,12 640,58 760,34 C880,10 980,52 1080,30 C1140,18 1180,32 1200,28" />
+  </svg>
+</div>
+
 <section id="about-me" class="bio">
   <div class="section-head reveal-on-scroll">
-    <p class="telemetry">// LOG ENTRY 01</p>
-    <h2>ABOUT ME</h2>
+    <p class="eyebrow">About</p>
+    <h2>A bit about me</h2>
   </div>
 
   <div class="me-content">
-    <div class="me-img hud-frame reveal-on-scroll">
-      <span class="corner tl"></span><span class="corner tr"></span>
-      <span class="corner bl"></span><span class="corner br"></span>
+    <div class="me-img reveal-on-scroll">
       <img src="./assets/images/5078566518131489216.jpeg" alt="Portrait of Enzo Sperduti" />
     </div>
 
@@ -83,28 +72,32 @@
         Reach out if you've got a question or a project in mind.
       </p>
 
-      <div class="stat-readout">
-        <div class="stat"><span class="stat-val">24</span><span class="stat-label">AGE</span></div>
-        <div class="stat"><span class="stat-val">05</span><span class="stat-label">YEARS CODING</span></div>
-        <div class="stat"><span class="stat-val">03</span><span class="stat-label">LANGUAGES</span></div>
+      <div class="stat-row">
+        <div class="stat"><span class="stat-val">24</span><span class="stat-label">Age</span></div>
+        <div class="stat"><span class="stat-val">5</span><span class="stat-label">Years coding</span></div>
+        <div class="stat"><span class="stat-val">3</span><span class="stat-label">Languages</span></div>
       </div>
     </div>
   </div>
 </section>
 
+<div class="ridge-divider flip" aria-hidden="true">
+  <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+    <path d="M0,45 C120,15 240,65 380,38 C520,12 640,58 760,34 C880,10 980,52 1080,30 C1140,18 1180,32 1200,28" />
+  </svg>
+</div>
+
 <section id="work" class="work">
   <div class="section-head reveal-on-scroll">
-    <p class="telemetry">// MISSION ARCHIVE</p>
-    <h2>MY WORK</h2>
+    <p class="eyebrow">Work</p>
+    <h2>Selected projects</h2>
   </div>
 
   <div class="projects">
-    <a class="project hud-frame reveal-on-scroll" href="https://enzonsn.github.io/run-buddy/">
-      <span class="corner tl"></span><span class="corner tr"></span>
-      <span class="corner bl"></span><span class="corner br"></span>
-      <span class="status-badge live">LIVE</span>
+    <a class="project reveal-on-scroll" href="https://enzonsn.github.io/run-buddy/">
       <div class="project-img">
         <img src="./assets/images/run-buddy.jpg" alt="Run Buddy Project website" />
+        <span class="status-tag">Live</span>
       </div>
       <div class="project-bio">
         <h3 class="project-name">Run Buddy</h3>
@@ -112,12 +105,10 @@
       </div>
     </a>
 
-    <a class="project hud-frame reveal-on-scroll" href="https://enzonsn.github.io/Horiseon-SEO-Project/">
-      <span class="corner tl"></span><span class="corner tr"></span>
-      <span class="corner bl"></span><span class="corner br"></span>
-      <span class="status-badge live">LIVE</span>
+    <a class="project reveal-on-scroll" href="https://enzonsn.github.io/Horiseon-SEO-Project/">
       <div class="project-img">
         <img src="./assets/images/Horiseon_Web.PNG" alt="Horiseon SEO Project website" />
+        <span class="status-tag">Live</span>
       </div>
       <div class="project-bio">
         <h3 class="project-name">Horiseon SEO</h3>
@@ -125,12 +116,10 @@
       </div>
     </a>
 
-    <a class="project hud-frame reveal-on-scroll" href="./">
-      <span class="corner tl"></span><span class="corner tr"></span>
-      <span class="corner bl"></span><span class="corner br"></span>
-      <span class="status-badge dev">IN DEV</span>
+    <a class="project reveal-on-scroll" href="./">
       <div class="project-img">
         <img src="./assets/images/soon.png" alt="Project coming soon" />
+        <span class="status-tag dim">In progress</span>
       </div>
       <div class="project-bio">
         <h3 class="project-name">Coming Soon</h3>
@@ -138,12 +127,10 @@
       </div>
     </a>
 
-    <a class="project hud-frame reveal-on-scroll" href="blended_blessed.html">
-      <span class="corner tl"></span><span class="corner tr"></span>
-      <span class="corner bl"></span><span class="corner br"></span>
-      <span class="status-badge dev">IN DEV</span>
+    <a class="project reveal-on-scroll" href="blended_blessed.html">
       <div class="project-img">
         <img src="./assets/images/soon.png" alt="Project coming soon" />
+        <span class="status-tag dim">In progress</span>
       </div>
       <div class="project-bio">
         <h3 class="project-name">Coming Soon</h3>
@@ -154,7 +141,7 @@
 </section>
 
 <section id="form_selector" class="form_selector reveal-on-scroll">
-  <p class="telemetry center">// DEPLOYMENT MODE</p>
+  <p class="eyebrow center">Inquire as</p>
   <div class="selector-row">
     <button class="selector_button" id="solo-button" onclick="">
       <span>Solo Investor</span>
@@ -169,19 +156,14 @@
 </section>
 
 <footer id="contact-me" class="contact">
-  <div class="contact-content hud-frame reveal-on-scroll">
-    <span class="corner tl"></span><span class="corner tr"></span>
-    <span class="corner bl"></span><span class="corner br"></span>
-
-    <p class="telemetry">// GROUND CONTROL · COMMS CHANNEL OPEN</p>
-    <h2>CONTACT</h2>
+  <div class="contact-content reveal-on-scroll">
+    <p class="eyebrow">Contact</p>
+    <h2>Get in touch</h2>
 
     <div class="contact-info">
-      <p><span class="contact-label">EMAIL</span><a href="mailto://enzosperduti@gmail.com">enzosperduti@gmail.com</a></p>
-      <p><span class="contact-label">PHONE</span><a href="tel:832-350-5989">(832) 350-5989</a></p>
+      <p><a href="mailto://enzosperduti@gmail.com">enzosperduti@gmail.com</a></p>
+      <p><a href="tel:832-350-5989">(832) 350-5989</a></p>
     </div>
-
-    <p class="local-time"><span class="dot dot-amber pulse"></span>HOUSTON, TX — <span id="localTime">--:--:--</span></p>
   </div>
 </footer>
 
