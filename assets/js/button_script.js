@@ -1,23 +1,55 @@
-window.addEventListener('DOMContentLoaded', () => {
-    const syncPointer = ({ x: pointerX, y: pointerY }) => {
-        const x = pointerX.toFixed(2);
-        const y = pointerY.toFixed(2);
-        const xp = (pointerX / window.innerWidth).toFixed(2);
-        const yp = (pointerY / window.innerHeight).toFixed(2);
-        document.documentElement.style.setProperty('--x', x);
-        document.documentElement.style.setProperty('--xp', xp);
-        document.documentElement.style.setProperty('--y', y);
-        document.documentElement.style.setProperty('--yp', yp);
+// ENZO SPERDUTI — PORTFOLIO INTERACTIONS
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const siteNav = document.getElementById('siteNav');
+  if (navToggle && siteNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = siteNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+    siteNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        siteNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Scroll-triggered reveals
+  const revealEls = document.querySelectorAll('.reveal-on-scroll');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach((el) => observer.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add('in-view'));
+  }
+
+  // Houston ground-control clock
+  const timeEl = document.getElementById('localTime');
+  if (timeEl) {
+    const updateClock = () => {
+      const now = new Date();
+      const formatted = new Intl.DateTimeFormat('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+        timeZone: 'America/Chicago',
+      }).format(now);
+      timeEl.textContent = formatted;
     };
+    updateClock();
+    setInterval(updateClock, 1000);
+  }
 
-    document.body.addEventListener('pointermove', syncPointer);
-
-    const soloButton = document.getElementById('solo-button');
-    if (soloButton) {
-        soloButton.addEventListener('click', () => {
-            window.location.href = '/MyPortfolio/form.html';
-        });
-    } else {
-        console.error('solo-button not found');
-    }
 });
