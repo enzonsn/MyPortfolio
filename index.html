@@ -1,120 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-type" content="text/html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <script defer src="./assets/js/button_script.js"></script>
-    <title>Enzo Sperduti's Portfolio</title>
+<meta charset="UTF-8">
+<meta http-equiv="Content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/styles.css">
+<script defer src="./assets/js/button_script.js"></script>
+<title>Enzo Sperduti's Portfolio</title>
 </head>
 <body>
-    <header>
-        <h1> </h1>
-        <nav>
-            <ul>
-                <li><a href="#about-me">About</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#contact-me">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <p id="hero-hello">My name is</p>
-            <div class="hero-name">
-                <h1>Enzo Sperduti</h1>
-            </div>
-            <p id="hero-about">| Novice Web Devleper | Competent Game Devleoper |</p>
-        </div>
-    </section>
+<div class="scanlines" aria-hidden="true"></div>
 
-    <section id="about-me" class="bio">
-        <div class="me-content flex-row">
-            <h2>ABOUT ME</h2>
-            <div class="me-img flex-row">
-                <img src="./assets/images/5078566518131489216.jpeg" alt="" />
-            </div>
-            <div class="me-text flex-row">
-                <p>
-                    I am 24 years old, graduated highschool in 2020 and took 4 years of Computer Science. In my 4 years of coding we covered in depth: Java, C++, Python.
-                    The classes I took were specifically focused around algorithims and making games like: Asteroids, Pong, TinyTanks, Mario, and many others that we curated ourselves.
-                    I am now taking classes in the Trilogy bootcamp through UT Austin getting a certificate to become a Full-Stack Web Developer.
-                    Many of the poeple I meet will quickly be able to tell that I am extroverted and that I take others' ideas into consideration.
-                    Coding has been apart of my life for the past 5 years and I hope for it to become my main profession.
-                    I would also like to mention, I have completed all of codingbat.com, both java and python.<br />
-                    Feel free to reach out if you have any questions or propositions!
-                </p>
-            </div>
-        </div>
-    </section>
+<header class="site-header">
+  <a class="brand" href="#top">
+    <span class="brand-mark">EN_</span><span class="brand-name">SPERDUTI</span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="siteNav">
+    <ul>
+      <li><a href="#about-me"><span class="idx">01</span> About</a></li>
+      <li><a href="#work"><span class="idx">02</span> Work</a></li>
+      <li><a href="#contact-me"><span class="idx">03</span> Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <section id="work" class="work">
-        <div class="work-content flex-row">
-            <h2>MY WORK</h2>
-            <div class="projects flex-row">
-                <div class="project flex-row">
-                    <a href="https://enzonsn.github.io/run-buddy/">
-                        <img src="./assets/images/run-buddy.jpg" alt="Run Buddy Project website" />
-                    </a>
-                    <div class="project-bio">
-                        <h3 class="project-name">Run Buddy</h3>
-                        <h4 class="project-speciality">HTML / CSS</h4>
-                    </div>
-                </div>
-                <div class="project">
-                    <a href="https://enzonsn.github.io/Horiseon-SEO-Project/">
-                        <img src="./assets/images/Horiseon_Web.PNG" alt="Horiseon SEO Project website" />
-                    </a>
-                    <div class="project-bio">
-                        <h3 class="project-name">Horiseon SEO</h3>
-                        <h4 class="project-speciality">HTML / CSS</h4>
-                    </div>
-                </div>
-                <div class="project">
-                    <a href="./">
-                        <img src="./assets/images/soon.png" alt="blank" />
-                    </a>
-                    <div class="project-bio">
-                        <h3 class="project-name"></h3>
-                        <h4 clas="project-speciality"></h4>
-                    </div>
-                </div>
-                <div class="project">
-                    <a href="blended_blessed.html">
-                        <img src="./assets/images/soon.png" alt="blank" />
-                    </a>
-                    <div class="project-bio">
-                        <h3 class="project-name"></h3>
-                        <h4 clas="project-speciality"></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="top" class="hero">
+  <div class="hero-bg" style="background-image:url('./assets/images/hero.jpg');"></div>
+  <div class="hero-vignette"></div>
+  <div class="starfield" aria-hidden="true"></div>
 
-    <section id="form_selector" class="form_selector">
-        <button class="selector_button" id="solo-button" onclick="">
-            <span>Solo Investor</span>
-        </button>
-        <button class="selector_button">
-            <span>Company</span>
-        </button>
-        <button class="selector_button">
-            <span>Joint Investor</span>
-        </button>
-    </section>
+  <div class="hero-content hud-frame">
+    <span class="corner tl"></span><span class="corner tr"></span>
+    <span class="corner bl"></span><span class="corner br"></span>
 
-    <footer id="contact-me" class="contact">
-        <div class="contact-content flex-column">
-            <h2>CONTACT</h2>
-            <div class="contact-info flex-column">
-                <p>Email:<a href="mailto://enzosperduti@gmail.com">enzosperduti@gmail.com</a></p>
-                <p>Phone Number:<a href="tel:832-350-5989">(832)-350-5989</a></p>
-            </div>
-        </div>
-    </footer>
+    <p id="hero-hello" class="telemetry reveal" style="--d:0">// TRANSMISSION ORIGIN: HOUSTON, TX</p>
+
+    <div class="hero-name reveal" style="--d:1">
+      <h1>ENZO<br>SPERDUTI</h1>
+    </div>
+
+    <div class="status-row reveal" style="--d:2">
+      <span class="chip"><i class="dot dot-amber"></i>WEB DEV — IN TRAINING</span>
+      <span class="chip"><i class="dot dot-cyan"></i>GAME DEV — 4 TITLES SHIPPED</span>
+    </div>
+
+    <a href="#about-me" class="scroll-cue reveal" style="--d:3" aria-label="Scroll to about section">
+      <span>SCROLL</span>
+      <svg width="14" height="20" viewBox="0 0 14 20"><path d="M7 0 L7 18 M1 12 L7 18 L13 12" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+    </a>
+  </div>
+</section>
+
+<section id="about-me" class="bio">
+  <div class="section-head reveal-on-scroll">
+    <p class="telemetry">// LOG ENTRY 01</p>
+    <h2>ABOUT ME</h2>
+  </div>
+
+  <div class="me-content">
+    <div class="me-img hud-frame reveal-on-scroll">
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+      <img src="./assets/images/5078566518131489216.jpeg" alt="Portrait of Enzo Sperduti" />
+    </div>
+
+    <div class="me-text reveal-on-scroll">
+      <p>
+        I'm 24 years old. I graduated high school in 2020 after four years of Computer Science, where I went deep on Java, C++, and Python — building games like Asteroids, Pong, TinyTanks, and Mario from scratch alongside classmates.
+      </p>
+      <p>
+        Right now I'm in the Trilogy Coding Bootcamp through UT Austin, working toward a certificate in Full-Stack Web Development. People who meet me quickly notice I'm extroverted and genuinely curious about other people's ideas.
+      </p>
+      <p>
+        Coding has been part of my life for five years, and I'm working to make it my career. I've also cleared every exercise on codingbat.com, in both Java and Python.<br/>
+        Reach out if you've got a question or a project in mind.
+      </p>
+
+      <div class="stat-readout">
+        <div class="stat"><span class="stat-val">24</span><span class="stat-label">AGE</span></div>
+        <div class="stat"><span class="stat-val">05</span><span class="stat-label">YEARS CODING</span></div>
+        <div class="stat"><span class="stat-val">03</span><span class="stat-label">LANGUAGES</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="work">
+  <div class="section-head reveal-on-scroll">
+    <p class="telemetry">// MISSION ARCHIVE</p>
+    <h2>MY WORK</h2>
+  </div>
+
+  <div class="projects">
+    <a class="project hud-frame reveal-on-scroll" href="https://enzonsn.github.io/run-buddy/">
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+      <span class="status-badge live">LIVE</span>
+      <div class="project-img">
+        <img src="./assets/images/run-buddy.jpg" alt="Run Buddy Project website" />
+      </div>
+      <div class="project-bio">
+        <h3 class="project-name">Run Buddy</h3>
+        <h4 class="project-speciality">HTML / CSS</h4>
+      </div>
+    </a>
+
+    <a class="project hud-frame reveal-on-scroll" href="https://enzonsn.github.io/Horiseon-SEO-Project/">
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+      <span class="status-badge live">LIVE</span>
+      <div class="project-img">
+        <img src="./assets/images/Horiseon_Web.PNG" alt="Horiseon SEO Project website" />
+      </div>
+      <div class="project-bio">
+        <h3 class="project-name">Horiseon SEO</h3>
+        <h4 class="project-speciality">HTML / CSS</h4>
+      </div>
+    </a>
+
+    <a class="project hud-frame reveal-on-scroll" href="./">
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+      <span class="status-badge dev">IN DEV</span>
+      <div class="project-img">
+        <img src="./assets/images/soon.png" alt="Project coming soon" />
+      </div>
+      <div class="project-bio">
+        <h3 class="project-name">Coming Soon</h3>
+        <h4 class="project-speciality">—</h4>
+      </div>
+    </a>
+
+    <a class="project hud-frame reveal-on-scroll" href="blended_blessed.html">
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+      <span class="status-badge dev">IN DEV</span>
+      <div class="project-img">
+        <img src="./assets/images/soon.png" alt="Project coming soon" />
+      </div>
+      <div class="project-bio">
+        <h3 class="project-name">Coming Soon</h3>
+        <h4 class="project-speciality">—</h4>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="form_selector" class="form_selector reveal-on-scroll">
+  <p class="telemetry center">// DEPLOYMENT MODE</p>
+  <div class="selector-row">
+    <button class="selector_button" id="solo-button" onclick="">
+      <span>Solo Investor</span>
+    </button>
+    <button class="selector_button" onclick="">
+      <span>Company</span>
+    </button>
+    <button class="selector_button" onclick="">
+      <span>Joint Investor</span>
+    </button>
+  </div>
+</section>
+
+<footer id="contact-me" class="contact">
+  <div class="contact-content hud-frame reveal-on-scroll">
+    <span class="corner tl"></span><span class="corner tr"></span>
+    <span class="corner bl"></span><span class="corner br"></span>
+
+    <p class="telemetry">// GROUND CONTROL · COMMS CHANNEL OPEN</p>
+    <h2>CONTACT</h2>
+
+    <div class="contact-info">
+      <p><span class="contact-label">EMAIL</span><a href="mailto://enzosperduti@gmail.com">enzosperduti@gmail.com</a></p>
+      <p><span class="contact-label">PHONE</span><a href="tel:832-350-5989">(832) 350-5989</a></p>
+    </div>
+
+    <p class="local-time"><span class="dot dot-amber pulse"></span>HOUSTON, TX — <span id="localTime">--:--:--</span></p>
+  </div>
+</footer>
 
 </body>
 </html>
