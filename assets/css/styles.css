@@ -332,3 +332,30 @@ section { padding: 5.5rem 2.2rem; max-width: 1080px; margin: 0 auto; }
   section { padding: 4rem 1.25rem; }
   .hero { padding: 5rem 1.25rem 3.5rem; }
 }
+
+html, body, a, button, .interactive {
+  cursor: none; /* Keep default browser cursor hidden */
+}
+
+.custom-cursor {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+
+  /* CRITICAL: Only transition width/height/background. Do NOT transition 'transform' */
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+}
+
+/* Hover state */
+.custom-cursor.hovered {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+}

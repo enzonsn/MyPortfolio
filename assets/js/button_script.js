@@ -1,5 +1,3 @@
-// ENZO SPERDUTI — PORTFOLIO INTERACTIONS
-
 document.addEventListener('DOMContentLoaded', () => {
 
   document.body.classList.add('js-ready');
