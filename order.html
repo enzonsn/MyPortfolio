@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
 
+<script defer src="./assets/js/cursor_script.js"></script>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
@@ -74,10 +75,13 @@ tailwind.config = {
   @media (prefers-reduced-motion: reduce) {
     .reveal, .pulse-dot, .cart-full-pulse { animation: none !important; opacity: 1 !important; transform: none !important; }
   }
+  html, body, a, button, .interactive {cursor: none;}
+  .custom-cursor {width: 10px; height: 10px; border: 2px solid #ffffff; border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; mix-blend-mode: difference; transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;}
+  .custom-cursor.hovered { width: 10px; height: 10px; background-color: #ffffff; }
 </style>
 </head>
 <body class="bg-cream text-plum font-sans antialiased overflow-x-hidden">
-
+  <div class="custom-cursor"></div>
   <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[60] focus:bg-plum focus:text-cream focus:px-4 focus:py-2 focus:rounded-full">Skip to content</a>
 
   <nav class="sticky top-0 z-40 backdrop-blur-md bg-cream/85 border-b border-plum/10">
