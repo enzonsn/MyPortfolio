@@ -2,30 +2,30 @@
 
 ## Product
 
-Personal portfolio for Enzo Sperduti. It introduces Enzo, presents selected web projects, and provides direct contact methods.
+Professional application site for Enzo Sperduti, a Certified Cardiographic Technician (CCT) seeking EKG monitor technician opportunities.
 
 ## Audience and outcomes
 
-- Hiring managers and collaborators assess Enzo's background and project work quickly.
-- Visitors can open a project, email Enzo, or call him without friction.
+- Hiring teams can assess Enzo's credential, role focus, and patient-centered approach quickly.
+- Visitors can open the CCT certificate, email Enzo, or call him without friction.
 
 ## Current surface
 
 - **Route:** `index.html`
-- **Mode:** Experience
-- **Primary journey:** Hero -> About -> Selected projects -> Contact
+- **Mode:** Persuade
+- **Primary journey:** Hero -> About -> Qualifications -> Contact
 
 ## Content rules
 
-- Preserve factual biography, project names, technology labels, and contact details unless Enzo explicitly supplies replacements.
-- Project cards link to live work where available; unfinished work remains clearly labeled.
-- Use direct, first-person portfolio language.
+- Preserve the verified CCT credential, issue date, certificate ID, and contact details.
+- Describe EKG monitor technician responsibilities as role focus, not unverified work history.
+- Use direct, patient-centered clinical language.
 
 ## Visual direction
 
 - Dark dune ridgelines at dusk.
 - Restrained warm accent color, low-contrast earth-toned surfaces, and an editorial display face.
-- Spacious composition with a quiet, personal feel; imagery leads and interface decoration stays minimal.
+- Spacious composition with a quiet, credible feel; the original portrait, hero treatment, and contact treatment remain in place.
 - Responsive layout must preserve reading order, accessible navigation, visible focus states, and reduced-motion support.
 
 ## Technical constraints
