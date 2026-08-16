@@ -29,7 +29,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
-  line-height: 1.7;
+  line-height: 1.65;
   overflow-x: hidden;
 }
 
@@ -115,7 +115,8 @@ footer[id] { scroll-margin-top: 5.5rem; }
   color: var(--ink-dim);
   transition: color 0.25s ease;
 }
-.site-header nav a:hover { color: var(--accent); }
+.site-header nav a:hover,
+.site-header nav a:focus-visible { color: var(--accent); }
 
 .skip-link {
   position: fixed;
@@ -262,9 +263,11 @@ footer[id] { scroll-margin-top: 5.5rem; }
   transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 .button-primary { background: var(--accent); color: var(--bg); }
-.button-primary:hover { background: var(--ink); }
+.button-primary:hover,
+.button-primary:focus-visible { background: var(--ink); }
 .button-secondary { border-color: rgba(236, 231, 223, 0.48); }
-.button-secondary:hover { border-color: var(--ink); background: var(--ink); color: var(--bg); }
+.button-secondary:hover,
+.button-secondary:focus-visible { border-color: var(--ink); background: var(--ink); color: var(--bg); }
 
 .scroll-cue { display: inline-block; }
 .scroll-cue span {
@@ -379,7 +382,8 @@ section:not(.hero) {
   filter: grayscale(0.5) contrast(1.08);
   transition: transform 0.6s ease, filter 0.4s ease;
 }
-.project:hover .project-img img { transform: scale(1.045); filter: grayscale(0) contrast(1.02); }
+.project:hover .project-img img,
+.project:focus-visible .project-img img { transform: scale(1.045); filter: grayscale(0) contrast(1.02); }
 .project-bio {
   display: flex;
   align-items: baseline;
@@ -473,7 +477,8 @@ section:not(.hero) {
   color: var(--ink);
   transition: color 0.25s ease, border-color 0.25s ease, padding 0.25s ease;
 }
-.contact-link:hover {
+.contact-link:hover,
+.contact-link:focus-visible {
   border-color: var(--accent);
   color: var(--accent);
   padding-inline: 0.75rem;
@@ -495,7 +500,8 @@ section:not(.hero) {
   font-size: 1.7rem;
   transition: transform 0.25s ease;
 }
-.contact-link:hover .contact-link-arrow { transform: translate(0.3rem, -0.3rem); }
+.contact-link:hover .contact-link-arrow,
+.contact-link:focus-visible .contact-link-arrow { transform: translate(0.3rem, -0.3rem); }
 
 /* ============== RESPONSIVE ============== */
 @media (max-width: 860px) {
