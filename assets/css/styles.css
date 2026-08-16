@@ -153,6 +153,7 @@ footer[id] { scroll-margin-top: 5.5rem; }
   align-items: flex-end;
   overflow: hidden;
   padding: 7rem var(--page-gutter) clamp(4rem, 8vw, 7rem);
+  isolation: isolate;
 }
 
 .hero-bg {
@@ -166,13 +167,63 @@ footer[id] { scroll-margin-top: 5.5rem; }
 .hero-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, var(--bg) 0%, rgba(12,12,13,0.35) 38%, rgba(12,12,13,0.05) 65%, rgba(12,12,13,0.25) 100%);
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(12, 12, 13, 0.66) 0%, rgba(12, 12, 13, 0.14) 62%, rgba(12, 12, 13, 0.42) 100%),
+    linear-gradient(to top, var(--bg) 0%, rgba(12, 12, 13, 0.38) 38%, rgba(12, 12, 13, 0.04) 68%, rgba(12, 12, 13, 0.35) 100%);
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   width: min(100%, 760px);
+}
+
+.hero-atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.hero-orbit {
+  position: absolute;
+  width: clamp(19rem, 38vw, 38rem);
+  aspect-ratio: 1;
+  border: 1px solid rgba(236, 231, 223, 0.2);
+  border-radius: 50%;
+}
+.orbit-one {
+  top: -15%;
+  right: -12%;
+  box-shadow: 0 0 0 2.5rem rgba(201, 123, 69, 0.06), 0 0 0 6rem rgba(201, 123, 69, 0.025);
+}
+.orbit-two {
+  right: 6%;
+  bottom: -50%;
+  width: clamp(15rem, 28vw, 28rem);
+  border-color: rgba(201, 123, 69, 0.45);
+}
+.hero-coordinate,
+.hero-caption {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.hero-coordinate {
+  position: absolute;
+  top: 50%;
+  right: var(--page-gutter);
+  color: rgba(236, 231, 223, 0.62);
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+}
+.hero-caption {
+  position: absolute;
+  right: var(--page-gutter);
+  bottom: clamp(4rem, 8vw, 7rem);
+  z-index: 3;
+  color: var(--accent);
 }
 
 .hero-name h1 {
@@ -237,7 +288,7 @@ footer[id] { scroll-margin-top: 5.5rem; }
   fill: none;
   stroke: var(--accent);
   stroke-width: 1;
-  opacity: 0.55;
+  opacity: 0.75;
 }
 .ridge-divider.flip { transform: scaleY(-1); }
 
@@ -269,6 +320,21 @@ section:not(.hero) {
   border-radius: var(--radius);
   filter: grayscale(0.3) contrast(1.05);
 }
+.me-img {
+  position: relative;
+  padding: 0 1.25rem 1.25rem 0;
+}
+.me-img::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 58%;
+  height: 58%;
+  border-right: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+  content: '';
+  pointer-events: none;
+}
 
 .me-text p { color: var(--ink-dim); margin-bottom: 1.1rem; max-width: 60ch; }
 
@@ -291,6 +357,8 @@ section:not(.hero) {
 }
 
 .project { display: block; }
+.project:first-child { grid-column: 1 / -1; }
+.project:first-child .project-img { aspect-ratio: 2.15 / 1; }
 .project-placeholder { cursor: default; }
 
 .project-img {
@@ -307,6 +375,12 @@ section:not(.hero) {
   transition: transform 0.6s ease, filter 0.4s ease;
 }
 .project:hover .project-img img { transform: scale(1.045); filter: grayscale(0) contrast(1.02); }
+.project-bio {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
 
 .status-tag {
   position: absolute;
@@ -345,7 +419,22 @@ section:not(.hero) {
 .selector_button:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ============== CONTACT ============== */
-.contact { padding-bottom: clamp(5rem, 10vw, 8rem); }
+.contact {
+  position: relative;
+  padding-bottom: clamp(5rem, 10vw, 8rem);
+  overflow: hidden;
+}
+.contact::before {
+  position: absolute;
+  top: 0;
+  right: var(--page-gutter);
+  color: rgba(201, 123, 69, 0.12);
+  content: 'E';
+  font-family: var(--font-display);
+  font-size: clamp(12rem, 28vw, 28rem);
+  line-height: 0.7;
+  pointer-events: none;
+}
 .contact-content { max-width: 480px; }
 .contact-content h2 { margin-bottom: 1.6rem; }
 
@@ -361,6 +450,8 @@ section:not(.hero) {
   .me-content { grid-template-columns: 1fr; }
   .me-img { max-width: 320px; }
   .projects { grid-template-columns: 1fr; }
+  .project:first-child { grid-column: auto; }
+  .project:first-child .project-img { aspect-ratio: 16 / 10; }
 }
 
 @media (max-width: 640px) {
@@ -383,6 +474,10 @@ section:not(.hero) {
 
   section:not(.hero) { padding-block: 4rem; }
   .hero { padding-block: 6rem 3.5rem; }
+  .hero-coordinate,
+  .hero-caption { display: none; }
+  .orbit-one { right: -45%; }
+  .orbit-two { right: -24%; }
   .stat-row { gap: 1.5rem; }
   .hero-actions { align-items: stretch; }
   .hero-actions .button { flex: 1 1 10rem; }
