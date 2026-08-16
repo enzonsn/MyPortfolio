@@ -30,6 +30,5 @@ Personal portfolio for Enzo Sperduti. It introduces Enzo, presents selected web 
 
 ## Technical constraints
 
-- Static HTML, CSS, and vanilla JavaScript.
 - Hosted on GitHub Pages.
 - No build system or runtime framework.

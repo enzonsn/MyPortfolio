@@ -15,6 +15,7 @@
 <body>
 
 <div class="custom-cursor"></div>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <header class="site-header">
   <a class="brand" href="#top">Enzo Sperduti</a>
@@ -30,6 +31,7 @@
   </nav>
 </header>
 
+<main id="main-content">
 <section id="top" class="hero">
   <div class="hero-bg" style="background-image:url('./assets/images/hero.jpg');"></div>
   <div class="hero-gradient"></div>
@@ -40,7 +42,11 @@
       <h1>Enzo Sperduti</h1>
     </div>
     <p id="hero-about" class="hero-tagline reveal" style="--d:2">Web developer in training. Lifelong game maker.</p>
-    <a href="#about-me" class="scroll-cue reveal" style="--d:3" aria-label="Scroll to about section">
+    <div class="hero-actions reveal" style="--d:3">
+      <a class="button button-primary" href="#work">View projects</a>
+      <a class="button button-secondary" href="#contact-me">Get in touch</a>
+    </div>
+    <a href="#about-me" class="scroll-cue reveal" style="--d:4" aria-label="Scroll to about section">
       <span></span>
     </a>
   </div>
@@ -54,7 +60,6 @@
 
 <section id="about-me" class="bio">
   <div class="section-head reveal-on-scroll">
-    <p class="eyebrow">About</p>
     <h2>A bit about me</h2>
   </div>
 
@@ -92,7 +97,6 @@
 
 <section id="work" class="work">
   <div class="section-head reveal-on-scroll">
-    <p class="eyebrow">Work</p>
     <h2>Selected projects</h2>
   </div>
 
@@ -119,7 +123,7 @@
       </div>
     </a>
 
-    <a class="project reveal-on-scroll" href="./">
+    <article class="project project-placeholder reveal-on-scroll">
       <div class="project-img">
         <img src="./assets/images/soon.png" alt="Project coming soon" />
         <span class="status-tag dim">In progress</span>
@@ -128,22 +132,22 @@
         <h3 class="project-name">Coming Soon</h3>
         <h4 class="project-speciality">—</h4>
       </div>
-    </a>
+    </article>
 
   </div>
 </section>
 
 <footer id="contact-me" class="contact">
   <div class="contact-content reveal-on-scroll">
-    <p class="eyebrow">Contact</p>
     <h2>Get in touch</h2>
 
     <div class="contact-info">
-      <p><a href="mailto://enzosperduti@gmail.com">enzosperduti@gmail.com</a></p>
+      <p><a href="mailto:enzosperduti@gmail.com">enzosperduti@gmail.com</a></p>
       <p><a href="tel:832-350-5989">(832) 350-5989</a></p>
     </div>
   </div>
 </footer>
+</main>
 
 </body>
 </html>
