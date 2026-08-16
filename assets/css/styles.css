@@ -333,8 +333,13 @@ section { padding: 5.5rem 2.2rem; max-width: 1080px; margin: 0 auto; }
   .hero { padding: 5rem 1.25rem 3.5rem; }
 }
 
-html, body, a, button, .interactive {
-  cursor: none; /* Keep default browser cursor hidden */
+@media (pointer: fine) {
+  body.cursor-active,
+  body.cursor-active a,
+  body.cursor-active button,
+  body.cursor-active .interactive {
+    cursor: none;
+  }
 }
 
 .custom-cursor {
@@ -349,11 +354,9 @@ html, body, a, button, .interactive {
   z-index: 9999;
   mix-blend-mode: difference;
 
-  /* CRITICAL: Only transition width/height/background. Do NOT transition 'transform' */
   transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
 }
 
-/* Hover state */
 .custom-cursor.hovered {
   width: 10px;
   height: 10px;

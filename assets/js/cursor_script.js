@@ -1,13 +1,53 @@
 const cursor = document.querySelector('.custom-cursor');
+const finePointer = window.matchMedia('(pointer: fine)');
+let animationFrame;
+let pointerX = 0;
+let pointerY = 0;
 
-window.addEventListener('mousemove', (e) => {
-  // Directly set the circle position to the mouse coordinates with no delay
-  cursor.style.transform = `translate(-50%, -50%) translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-});
+if (cursor) {
+  const renderCursor = () => {
+    cursor.style.transform = `translate(-50%, -50%) translate3d(${pointerX}px, ${pointerY}px, 0)`;
+    animationFrame = undefined;
+  };
 
-// Optional: Keep the hover effect if you want it to expand over links
-const interactiveElements = document.querySelectorAll('a, button, .interactive');
-interactiveElements.forEach((el) => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
-});
+  const moveCursor = (event) => {
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+
+    if (!animationFrame) {
+      animationFrame = window.requestAnimationFrame(renderCursor);
+    }
+  };
+
+  const interactiveElements = document.querySelectorAll('a, button, .interactive');
+  const setHovered = () => cursor.classList.add('hovered');
+  const clearHovered = () => cursor.classList.remove('hovered');
+
+  const updateCursor = () => {
+    const enabled = finePointer.matches;
+
+    document.body.classList.toggle('cursor-active', enabled);
+    window.removeEventListener('mousemove', moveCursor);
+    interactiveElements.forEach((element) => {
+      element.removeEventListener('mouseenter', setHovered);
+      element.removeEventListener('mouseleave', clearHovered);
+    });
+
+    if (enabled) {
+      window.addEventListener('mousemove', moveCursor);
+      interactiveElements.forEach((element) => {
+        element.addEventListener('mouseenter', setHovered);
+        element.addEventListener('mouseleave', clearHovered);
+      });
+    } else {
+      cursor.classList.remove('hovered');
+      if (animationFrame) {
+        window.cancelAnimationFrame(animationFrame);
+        animationFrame = undefined;
+      }
+    }
+  };
+
+  finePointer.addEventListener('change', updateCursor);
+  updateCursor();
+}

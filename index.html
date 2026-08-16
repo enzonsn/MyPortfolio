@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./assets/css/styles.css">
 <script defer src="./assets/js/cursor_script.js"></script>
+<script defer src="./assets/js/button_script.js"></script>
 <title>Enzo Sperduti's Portfolio</title>
 </head>
 <body>
@@ -17,10 +18,10 @@
 
 <header class="site-header">
   <a class="brand" href="#top">Enzo Sperduti</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-controls="siteNav" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
-  <nav id="siteNav">
+  <nav id="siteNav" aria-label="Primary navigation">
     <ul>
       <li><a href="#about-me">About</a></li>
       <li><a href="#work">Work</a></li>
@@ -129,16 +130,6 @@
       </div>
     </a>
 
-    <a class="project reveal-on-scroll" href="blended_blessed.html">
-      <div class="project-img">
-        <img src="./assets/images/soon.png" alt="Project coming soon" />
-        <span class="status-tag dim">In progress</span>
-      </div>
-      <div class="project-bio">
-        <h3 class="project-name">Coming Soon</h3>
-        <h4 class="project-speciality">—</h4>
-      </div>
-    </a>
   </div>
 </section>
 

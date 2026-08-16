@@ -2,20 +2,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.body.classList.add('js-ready');
 
-  // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
   const siteNav = document.getElementById('siteNav');
   if (navToggle && siteNav) {
+    const mobileNav = window.matchMedia('(max-width: 640px)');
+    let isOpen = false;
+
+    const syncNavigation = () => {
+      if (mobileNav.matches) {
+        siteNav.hidden = !isOpen;
+        siteNav.inert = !isOpen;
+      } else {
+        isOpen = false;
+        siteNav.hidden = false;
+        siteNav.inert = false;
+      }
+
+      siteNav.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    };
+
     navToggle.addEventListener('click', () => {
-      const isOpen = siteNav.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', isOpen);
+      isOpen = !isOpen;
+      syncNavigation();
     });
+
     siteNav.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
-        siteNav.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
+        isOpen = false;
+        syncNavigation();
       });
     });
+
+    mobileNav.addEventListener('change', syncNavigation);
+    syncNavigation();
   }
 
   // Scroll-triggered reveals
